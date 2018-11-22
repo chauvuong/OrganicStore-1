@@ -1,0 +1,17 @@
+.social {    
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: center;
+	color: white;
+  }
+ 
+.social a{
+	color:;
+    padding-top: 15px;             
+    width: 55px;
+    height: 55px;
+    border-radius: 50%; 
+  }
+  .social a:hover {     
+      text-decoration:none;
+    }

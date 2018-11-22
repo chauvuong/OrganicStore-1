@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- ADMIN TEMPLATE -->
+	<definition name="admin.template" template="/WEB-INF/templates/admin/template.jsp">
+		<put-attribute name="header" value="/WEB-INF/templates/admin/header.jsp" />
+		<put-attribute name="leftbar" value="/WEB-INF/templates/admin/leftbar.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/templates/admin/footer.jsp" />
+	</definition>
+	
+	<definition name="admin.index.index" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/index/index.jsp" />
+	</definition>
+	
+	<!-- cat -->
+	
+	<definition name="admin.cat.index" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/cat/index.jsp" />
+	</definition>
+
+	<definition name="admin.cat.add" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/cat/add.jsp" />
+	</definition>
+
+	<definition name="admin.cat.edit" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/cat/edit.jsp" />
+	</definition>
+	
+	<!-- user -->
+
+	<definition name="admin.user.index" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/user/index.jsp" />
+	</definition>
+
+	<definition name="admin.user.add" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/user/add.jsp" />
+	</definition>
+
+	<definition name="admin.user.edit" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/user/edit.jsp" />
+	</definition>
+	
+	<!-- product -->
+	
+	
+	<definition name="admin.product.index" extends="admin.template">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/product/index.jsp" />
+	</definition>
+
+	<definition name="admin.product.add" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/product/add.jsp" />
+	</definition>
+
+	<definition name="admin.product.edit" extends="admin.template">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/product/edit.jsp" />
+	</definition>
+	
+	<definition name="admin.product.search" extends="admin.template">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/product/search.jsp" />
+	</definition>
+	
+	<!-- role -->
+
+	<definition name="admin.role.index" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/role/index.jsp" />
+	</definition>
+
+	<definition name="admin.role.add" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/role/add.jsp" />
+	</definition>
+
+	<definition name="admin.role.edit" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/role/edit.jsp" />
+	</definition>
+	
+	<!-- member -->
+
+	<definition name="admin.member.index" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/member/index.jsp" />
+	</definition>
+
+	<definition name="admin.member.add" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/member/add.jsp" />
+	</definition>
+
+	<definition name="admin.member.edit" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/member/edit.jsp" />
+	</definition>
+	
+	<!-- payment -->
+
+	<definition name="admin.payment.index" extends="admin.template">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/payment/index.jsp" />
+	</definition>
+
+	<definition name="admin.payment.add" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/payment/add.jsp" />
+	</definition>
+
+	<definition name="admin.payment.edit" extends="admin.template">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/payment/edit.jsp" />
+	</definition>
+	
+	<!-- order -->
+	
+	<definition name="admin.order.index" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/order/index.jsp" />
+	</definition>
+	
+	<definition name="admin.order.detail" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/order/detail.jsp" />
+	</definition>
+	
+	<!-- contact -->
+	
+	<definition name="admin.contact.index" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/contact/index.jsp" />
+	</definition>
+	
+	<definition name="admin.comment.index" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/comment/index.jsp" />
+	</definition>
+	
+	
+	
+	
+	<!-- AUTH TEMPLATE -->
+	<definition name="auth.template" template="/WEB-INF/templates/auth/template.jsp">
+		<put-attribute name="header" value="/WEB-INF/templates/auth/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/templates/auth/footer.jsp" />
+	</definition>
+	<definition name="auth.login" extends="auth.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/auth/login.jsp" />
+	</definition>
+	<definition name="auth.403" extends="auth.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/auth/403.jsp" />
+	</definition>
+
+
+	<!--END AUTH TEMPLATE -->
+	
+	
+	<!-- PUBLIC HOME TEMPLATE -->
+	<definition name="public.template" template="/WEB-INF/templates/public/template.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/templates/public/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/templates/public/footer.jsp" />
+	</definition>
+
+	<definition name="public.shop.index" extends="public.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/index.jsp" />
+	</definition>
+	
+	
+	
+	<!-- PUBLIC TEMPLATE -->
+	
+	<definition name="public.template1" template="/WEB-INF/templates/public/template.jsp">
+		<put-attribute name="header" value="/WEB-INF/templates/public/header1.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/templates/public/footer.jsp" />
+	</definition>
+	
+	<definition name="public.shop.contact" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/contact.jsp" />
+	</definition>
+	
+	<definition name="public.shop.cat" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/cat.jsp" />
+	</definition>
+	
+	<definition name="public.shop.cart" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/cart.jsp" />
+	</definition>
+	
+	<definition name="public.shop.checkout" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/checkout.jsp" />
+	</definition>
+	<definition name="public.shop.register" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/register.jsp" />
+	</definition>
+	
+	<definition name="public.shop.myaccount" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/myaccount.jsp" />
+	</definition>
+	
+	<definition name="public.shop.detail" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/detail.jsp" />
+	</definition>
+	
+	
+
+</tiles-definitions>
