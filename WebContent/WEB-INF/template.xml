@@ -64,6 +64,11 @@
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/admin/product/search.jsp" />
 	</definition>
+	<!-- product images -->
+	<definition name="admin.imamgesproduct.index" extends="admin.template">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/product/index.jsp" />
+	</definition>
 	
 	<!-- role -->
 
@@ -146,6 +151,7 @@
 	</definition>
 
 
+
 	<!--END AUTH TEMPLATE -->
 	
 	
@@ -199,6 +205,25 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/public/detail.jsp" />
 	</definition>
 	
+	<definition name="public.shop.confirm" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/confirm.jsp" />
+	</definition>
 	
+	<definition name="public.shop.paysuccess" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/paysuccess.jsp" />
+	</definition>
+	
+	<definition name="public.shop.paysuccess1" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/paysuccess1.jsp" />
+	</definition>
+	
+	<definition name="public.shop.paysuccess3" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/paysuccess3.jsp" />
+	</definition>
+	
+	
+	<definition name="public.shop.404" extends="auth.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/404.jsp" />
+	</definition>
 
 </tiles-definitions>

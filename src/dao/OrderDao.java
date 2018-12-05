@@ -22,8 +22,8 @@ public class OrderDao {
 	}
 
 	public int addItem(Order objItem) {
-		String query = "INSERT INTO orders(name_customer,place, phone, pay, date_create, id_member) VALUES (?,?,?,?,?,?)";
-		return jdbcTemplate.update(query, new Object[] { objItem.getName_customer(), objItem.getPlace(),objItem.getPhone(), objItem.getPay() , objItem.getDate_create(), objItem.getId_member() });
+		String query = "INSERT INTO orders(name_customer,place, phone, pay, note, email, date_create, id_member) VALUES (?,?,?,?,?,?,?,?)";
+		return jdbcTemplate.update(query, new Object[] { objItem.getName_customer(), objItem.getPlace(),objItem.getPhone(), objItem.getPay() ,objItem.getNote(),objItem.getEmail(), objItem.getDate_create(), objItem.getId_member() });
 	}
 
 	public Order getItem(int id) {

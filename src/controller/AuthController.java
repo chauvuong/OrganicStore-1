@@ -14,5 +14,10 @@ public class AuthController {
 	public String err403() {
 		return "auth.403";
 	}
+	
+	@RequestMapping("/404")
+	public String err404() {
+		return "public.shop.404";
+	}
 
 }

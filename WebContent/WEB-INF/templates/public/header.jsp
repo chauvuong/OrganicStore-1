@@ -60,7 +60,7 @@
 									<a href="javascript:void(0)">SẢN PHẨM</a>
 									<ul class="sub-menu">
 										<c:forEach var="objCat" items="${listCat }">
-											<c:set value="${pageContext.request.contextPath}/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
+											<c:set value="${pageContext.request.contextPath}/danh-muc/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
 											var="slugName"></c:set>
 										<li><a href="${slugName }">${objCat.name}</a></li>
 										</c:forEach>
@@ -110,7 +110,7 @@
 								<div class="cart-header menu-click-child trans-04">
 									<marquee width="100%">Chào ${userInfo.fullname }</marquee>
 									<%-- <a href="${pageContext.request.contextPath }/" class="txt-s-101 cl9 hov-cl10 trans-04">Chào ${userInfo.fullname }</a><br/> --%>
-									<a href="${pageContext.request.contextPath }/myaccount" class="txt-s-101 cl9 hov-cl10 trans-04">Thông Tin Cá Nhân</a><br/>
+									<a href="${pageContext.request.contextPath }/myaccount/${userInfo.id_member}" class="txt-s-101 cl9 hov-cl10 trans-04">Thông Tin Cá Nhân</a><br/>
 									<a href="${pageContext.request.contextPath }/logout-member" class="txt-s-101 cl9 hov-cl10 trans-04">Đăng xuất</a>
 								</div>
 							</div>
@@ -150,9 +150,9 @@
 												</div>
 											</div>
 											</form>
-											<a href="account-lost-pass.html" class="txt-s-101 cl9 hov-cl10 trans-04">
+											<!-- <a href="account-lost-pass.html" class="txt-s-101 cl9 hov-cl10 trans-04">
 												Quên mật khẩu?
-											</a>
+											</a> -->
 										
 										<a href="${pageContext.request.contextPath }/register" class="txt-s-101 cl9 hov-cl10 trans-04">
 											Đăng ký
@@ -173,7 +173,7 @@
 						
 							<div class="wrap-cart-header h-full flex-m m-l-10 menu-click">
 							
-								<div class="icon-header-item flex-c-m trans-04 icon-header-noti" data-notify="2">
+								<div class="icon-header-item flex-c-m trans-04 icon-header-noti" data-notify="0">
 									<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart-2.png" alt="CART">
 								</div>
 								
@@ -190,12 +190,12 @@
 											
 											<div class="flex-w flex-str m-b-25">
 												<div class="size-w-15 flex-w flex-t">
-													<a href="${pageContext.request.contextPath}/${slug}-${id}.html" class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
+													<a href="${pageContext.request.contextPath}/san-pham/${slug}-${id}.html" class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
 														<img width="77px" height="64.33px" src="${pageContext.request.contextPath }/files/${objCart.picture}" alt="PRODUCT">
 													</a>
 
 													<div class="size-w-17 flex-col-l">
-														<a href="${pageContext.request.contextPath}/${slug}-${id}.html" class="txt-s-108 cl3 hov-cl10 trans-04">
+														<a href="${pageContext.request.contextPath}/san-pham/${slug}-${id}.html" class="txt-s-108 cl3 hov-cl10 trans-04">
 															${objCart.name}
 														</a>
 

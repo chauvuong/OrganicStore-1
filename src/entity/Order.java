@@ -7,6 +7,8 @@ public class Order {
 	private String phone;
 	private String place;
 	private String pay;
+	private String email;
+	private String note;
 	private int status;
 	private int id_member;
 	private int id_pay;
@@ -14,8 +16,9 @@ public class Order {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Order(int id_order, String name_customer, String date_create, String phone, String place, String pay,
-			int status, int id_member, int id_pay) {
+			String email, String note, int status, int id_member, int id_pay) {
 		super();
 		this.id_order = id_order;
 		this.name_customer = name_customer;
@@ -23,10 +26,30 @@ public class Order {
 		this.phone = phone;
 		this.place = place;
 		this.pay = pay;
+		this.email = email;
+		this.note = note;
 		this.status = status;
 		this.id_member = id_member;
 		this.id_pay = id_pay;
 	}
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
 	public int getId_order() {
 		return id_order;
 	}

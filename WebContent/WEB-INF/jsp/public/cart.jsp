@@ -19,7 +19,6 @@
 <!-- content page -->
 <div class="bg0 p-tb-100">
 	<div class="container">
-		<form enctype="multipart/form-data" method="post" action="">
 			<div class="wrap-table-shopping-cart">
 				<table class="table-shopping-cart">
 					<tr class="table_head bg12">
@@ -28,10 +27,11 @@
 						<th class="column-3">Số lượng</th>
 						<th class="column-4">Tiền</th>
 					</tr>
-
-					<c:forEach items="${listCart}" var="objCart">
-					<c:set var="urlDetail"
-								value="${pageContext.request.contextPath}/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
+					<c:choose>
+					<c:when test="${listCart != null}">
+						<c:forEach items="${listCart}" var="objCart">
+						<c:set var="urlDetail"
+							value="${pageContext.request.contextPath}/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
 						<c:set var="name" value="${objCart.name}"></c:set>
 						<c:set var="id" value="${objCart.id_product}"></c:set>
 						<c:set var="gia" value="${objCart.price}"></c:set>
@@ -46,7 +46,8 @@
 							<td class="column-1">
 								<div class="flex-w flex-m">
 									<div class="wrap-pic-w size-w-50 bo-all-1 bocl12 m-r-30">
-										<a href="${urlDetail }"><img width="118px" height="99.31px"
+										<a href="${urlDetail }"><img width="118px"
+											height="99.31px"
 											src="${pageContext.request.contextPath }/files/${objCart.picture}"
 											alt="${objCart.name}"></a>
 									</div>
@@ -56,18 +57,24 @@
 							</td>
 							<td class="column-2" id="gia">${gia}</td>
 							<td class="column-3" id="soluong">
-								<div class="wrap-num-product flex-w flex-m bg12 p-rl-10">
+								<%-- <div class="wrap-num-product flex-w flex-m bg12 p-rl-10">
 									<div class="btn-num-product-down flex-c-m fs-29"></div>
-
+							
 									<input class="txt-m-102 cl6 txt-center num-product" onchange="soLuong(this.value,${id},${gia})" value="${soluong}" title="Qty" min="1"
 										type="number" name="cart[10522][qty]">
 
 									<div class="btn-num-product-up flex-c-m fs-16"></div>
-								</div>
+									
+								
+								</div> --%> 
+								<input type="number" min="1" max="10"  style="color: #A4A4A4;" name="cart[10522][qty]"
+								onchange="soLuong(this.value,${id},${gia})" value="${soluong}"
+								size="1" title="Qty" type="number" class="input-text qty"
+								size="1" class="w30">
 							</td>
 							<td class="column-4">
 								<div class="flex-w flex-sb-m">
-									<span id ="thanhtien${id}"> ${thanhtien} </span>
+									<span id="thanhtien${id}"> ${thanhtien} </span>
 
 									<div class="fs-15 hov-cl10 pointer">
 										<a href="${pageContext.request.contextPath}/huy/${id}"
@@ -78,6 +85,28 @@
 							</td>
 						</tr>
 					</c:forEach>
+					</c:when>
+					
+					<c:otherwise>
+						 <div class="tab-pane fade" id="orders" role="tabpanel">
+								<div class="bo-all-1 bocl15 flex-w flex-sb-m p-rl-30 p-tb-10 p-rl-15-ssm">
+									<div class="flex-t p-tb-8 m-r-30">
+										<img class="m-t-6 m-r-10" src="${pageContext.request.contextPath }/templates/public/images/icons/icon-list.png" alt="IMG">
+										<span class="size-w-53 txt-s-101 cl6">
+											Chưa Có Sản Phẩm Nào Được Order.
+										</span>
+									</div>
+
+									<a href="${pageContext.request.contextPath }/" class="flex-c-m txt-s-105 cl0 bg10 size-a-42 hov-btn2 trans-04 p-rl-10 m-tb-8">
+										Mua Ngay
+									</a>
+								</div>
+						</div> 
+					
+					</c:otherwise>
+					
+					</c:choose>
+				
 
 				</table>
 			</div>
@@ -95,7 +124,7 @@
 
 				<div class="flex-w flex-m m-r-50 m-tb-10">
 
-					<a href="${pageContext.request.contextPath }/"><div
+					<a href="javaScript:window.history.back();"><div
 							class="flex-c-m txt-s-105 cl0 bg10 size-a-32 hov-btn2 trans-04 pointer p-rl-10 m-tb-10">
 							Tiếp Tục Mua Hàng</div></a>
 				</div>
@@ -103,7 +132,8 @@
 				<div class="flex-col-l p-t-68">
 					<div class="flex-w flex-m bo-b-1 bocl15 w-full p-tb-18">
 						<span class="size-w-58 txt-m-109 cl3"> Tổng Tiền: </span> <span
-							class="size-w-59 txt-m-104 cl6" id= "tongtien"> ${tongtien } </span>
+							class="size-w-59 txt-m-104 cl6" id="tongtien"> ${tongtien }
+						</span>
 					</div>
 
 					<!-- <div class="flex-w flex-m bo-b-1 bocl15 w-full p-tb-18">
@@ -130,6 +160,9 @@
 
 
 			</div>
+			
+			
+			
 	</div>
 </div>
 <script>

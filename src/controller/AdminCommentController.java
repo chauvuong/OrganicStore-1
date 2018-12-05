@@ -63,7 +63,7 @@ public class AdminCommentController {
 		return "redirect:/admin/comment";
 	}
 
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
+/*	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public void comment(ModelMap modelMap, HttpSession session, HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
 		PrintWriter out = response.getWriter();
@@ -107,5 +107,5 @@ public class AdminCommentController {
 		out.print(s);
 
 	}
-
+*/
 }

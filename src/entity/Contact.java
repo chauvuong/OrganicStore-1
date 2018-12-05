@@ -1,8 +1,12 @@
 package entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Contact {
 	private int id_contact;
+	@NotEmpty(message = "-- Vui Lòng Nhập Họ Tên")
 	private String name;
+	@NotEmpty(message = "-- Vui Lòng Nhập Email")
 	private String email;
 	private String address;
 	private String phone;

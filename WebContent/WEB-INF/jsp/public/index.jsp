@@ -386,7 +386,7 @@
 					</button>
 					
 					<c:forEach var="objCat" items="${listCat }">
-						<c:set value="${pageContext.request.contextPath}/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
+						<c:set value="${pageContext.request.contextPath}/danh-muc/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
 						var="slugName"></c:set>
 
 					<button class="txt-m-104 cl9 hov2 trans-04 p-rl-27 p-b-10" data-filter=".${objCat.id_cat}">
@@ -401,7 +401,7 @@
 				<c:forEach var="objProduct" items="${listNews }">
 				<c:set var="id" value="${objProduct.id_product }"></c:set>
 							<c:set var="urlDetail"
-								value="${pageContext.request.contextPath}/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
+								value="${pageContext.request.contextPath}/san-pham/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-75 isotope-item ${objProduct.id_cat }">
 					
 					<div class="block1">
@@ -574,7 +574,7 @@
 								
 							<c:forEach var="objProduct" items="${alProduct }">
 							<c:set var="urlDetail"
-								value="${pageContext.request.contextPath}/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
+								value="${pageContext.request.contextPath}/san-pham/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
 								<div class="item-slick4" >
 									<div class="block1">
 										<div class="block1-bg wrap-pic-w" >

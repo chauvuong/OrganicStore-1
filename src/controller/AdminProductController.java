@@ -23,7 +23,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import constant.Defines;
 import dao.CatDao;
-
 import dao.ProductDao;
 import entity.Product;
 import util.StringUtil;
@@ -289,5 +288,7 @@ public class AdminProductController {
 		modelMap.addAttribute("objSearch", objSearch);
 		return "admin.product.search";
 	}
+	
+	
 
 }

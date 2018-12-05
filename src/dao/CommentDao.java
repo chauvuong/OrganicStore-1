@@ -58,5 +58,17 @@ public class CommentDao {
 
 	}
 	
+	
+	public int sumRating(int id) {
+		String sql = "SELECT SUM(rating) AS tong FROM comment WHERE product_id = ?";
+		int tong = this.jdbcTemplate.queryForObject(sql, new Object[] { id }, Integer.class);
+		return tong;
+
+	}
+	
+	
+	
+	
+	
 
 }

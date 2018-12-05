@@ -21,6 +21,13 @@
 		</div>
 	</section>
 	<br />
+	<c:choose>
+	<c:when test="${param['msg'] eq 'add' }">
+		<center><h4>
+			<p style="color: red; font-family: cursive; ">Email Đã Tồn Tại</p>
+		</h4></center>
+	</c:when>
+	</c:choose>
 	<center><h1 style="color: green; font-family: cursive; ">${msg}</h1></center>
 	<!-- content page -->
 	<div  class="bg0 p-t-95 p-b-50">
@@ -45,7 +52,7 @@
 									Họ Và Tên <span class="cl12">*</span>
 								</div>
 
-								<input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" required="required"  placeholder="Nhập Họ Và Tên" type="text" name="fullname">
+								<input  class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" required="required"  placeholder="Nhập Họ Và Tên" type="text" name="fullname">
 							</div>
 							
 							<div class="p-b-24">
@@ -61,7 +68,7 @@
 									Password <span class="cl12">*</span>
 								</div>
 
-								<input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" required="required"  placeholder="Nhập Password" type="text" name="password">
+								<input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" required="required"  placeholder="Nhập Password" type="password" name="password">
 							</div>
 							
 							<div class="p-b-24">

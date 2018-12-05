@@ -60,7 +60,7 @@
 
 							<c:forEach var="objCat" items="${listCat }">
 								<c:set
-									value="${pageContext.request.contextPath}/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
+									value="${pageContext.request.contextPath}/danh-muc/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
 									var="slugName"></c:set>
 								<li class="p-b-5"><a href="${slugName }"
 									class="flex-sb-m flex-w txt-s-101 cl6 hov-cl10 trans-04 p-tb-3">
@@ -169,14 +169,14 @@
 
 							<c:forEach var="objProduct" items="${listProduct}">
 								<c:set var="urlDetail"
-									value="${pageContext.request.contextPath}/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product}.html"></c:set>
+									value="${pageContext.request.contextPath}/san-pham/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product}.html"></c:set>
 								<!-- - -->
 								<div class="col-sm-6 col-lg-4 p-b-30">
 									<!-- Block1 -->
 									<div class="block1">
 										<div
 											class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
-											<a href="${urlDetail }"><img
+											<a href="${urlDetail }"><img style="width:268px ; height: 353.22px;"
 												src="${pageContext.request.contextPath }/files/${objProduct.picture}"
 												alt="IMG"></a>
 
@@ -224,7 +224,7 @@
 
 						<c:forEach var="objProduct" items="${listProduct}">
 							<c:set var="urlDetail"
-								value="${pageContext.request.contextPath}/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product}.html"></c:set>
+								value="${pageContext.request.contextPath}/san-pham/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product}.html"></c:set>
 							<div class="row p-b-30">
 								<div class=" col-sm-5 col-lg-4">
 									<a href="${urlDetail }"

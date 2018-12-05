@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/jsp/admin/auth/403.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/admin/auth/login.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/public/confirm.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/public/contact.jsp=UTF-8
 encoding//src/controller/AdminCatController.java=UTF-8
 encoding//src/controller/AdminCommentController.java=UTF-8
@@ -13,6 +14,7 @@ encoding//src/controller/AdminRoleController.java=UTF-8
 encoding//src/controller/AdminUserController.java=UTF-8
 encoding//src/controller/PublicController.java=UTF-8
 encoding//src/entity/Cat.java=UTF-8
+encoding//src/entity/Contact.java=UTF-8
 encoding//src/entity/Payment.java=UTF-8
 encoding//src/entity/Product.java=UTF-8
 encoding//src/entity/Role.java=UTF-8

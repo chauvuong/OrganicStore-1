@@ -35,8 +35,8 @@
 							method="post" class="niceform">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Tên Danh Mục</label> <input
-									type="text" class="form-control" name="name" <c:if test="${cat != null}"> value="${cat.name}"</c:if> />
-									id="exampleInputEmail1" placeholder="Nhập Tên Danh Mục" >
+									type="text" class="form-control" name="name" <c:if test="${cat != null}"> value="${cat.name}"</c:if> 
+									id="exampleInputEmail1" placeholder="Nhập Tên Danh Mục" />
 							</div>
 							
 							<p><form:errors path="cat.name" cssStyle="color:red; font-family: cursive;"></form:errors></p>

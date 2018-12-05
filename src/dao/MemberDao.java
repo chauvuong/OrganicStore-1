@@ -68,13 +68,28 @@ public class MemberDao {
 	}
 
 	public Member checkLogin(String email, String password) {
-		String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
+		String sql = "SELECT * FROM user WHERE email = ? AND password = ?  AND enable=1";
 		try {
 			return jdbcTemplate.queryForObject(sql, new Object[] { email, stringUtil.md5(password) },
-					new BeanPropertyRowMapper<Member>(Member.class));
+					new BeanPropertyRowMapper<Member>(Member.class)); 
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
+	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public boolean checkItem(Member objMember) {
+		String query = "SELECT * FROM user WHERE email=? ";
+		try {
+			Member obj = (Member) jdbcTemplate.queryForObject(query, new Object[] { objMember.getEmail() },
+					new BeanPropertyRowMapper(Member.class));
+			if (objMember.getId_member() == obj.getId_member() && objMember.getId_member() != 0)
+				return true;
+		} catch (EmptyResultDataAccessException e) {
+			return true;
+		}
+		return false;
+
 	}
 
 	public int delItem(int id) {

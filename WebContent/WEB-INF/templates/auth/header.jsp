@@ -9,7 +9,7 @@
 
   <link rel="shortcut icon" href="${pageContext.request.contextPath }/templates/admin/img/favicon.png">
 
-  <title>Organic Shop Login</title>
+  <title>Organic Store</title>
 
   <!-- Bootstrap CSS -->
   <link href="${pageContext.request.contextPath }/templates/admin/css/bootstrap.min.css" rel="stylesheet">
