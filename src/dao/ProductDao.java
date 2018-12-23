@@ -28,7 +28,7 @@ public class ProductDao {
 	}
 
 	public int addItem(Product product) {
-		String sql = "INSERT INTO product(name, preview, picture, details,  price, discount,id_cat, active, count_views ) VALUE(?,?,?,?,?,?,?,1,0)";
+		String sql = "INSERT INTO product(name, preview, picture, details,  price, discount,id_cat, active, count_views, rating ) VALUE(?,?,?,?,?,?,?,1,0,5)";
 		return jdbcTemplate.update(sql,
 				new Object[] { product.getName(), product.getPreview(), product.getPicture(),
 						 product.getDetails(), 
@@ -86,9 +86,10 @@ public class ProductDao {
 	}
 
 	public List<Product> getItemsPublics() {
-		String sql = "SELECT id_product, p.name AS name , picture, preview,details,price,discount, p.id_cat,active,date_create FROM product AS p INNER JOIN categories AS c ON c.id_cat = p.id_cat WHERE active = 1 ORDER BY id_product DESC LIMIT 10 ";
+		String sql = "SELECT id_product, p.name AS name , picture,rating, preview,details,price,discount, p.id_cat,active,date_create FROM product AS p INNER JOIN categories AS c ON c.id_cat = p.id_cat WHERE active = 1 ORDER BY id_product DESC ";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Product>(Product.class));
 	}
+	
 
 	public int upViews(int id) {
 		String sql = "UPDATE product SET count_views = count_views + 1 WHERE id_product = ? ORDER BY count_views DESC";
@@ -101,9 +102,23 @@ public class ProductDao {
 	}
 
 	public int countNewPublicCat(int cid) {
-		String sql = "SELECT COUNT(*) as sum FROM product WHERE id_cat = ?";
+		String sql = "SELECT COUNT(*) as sum FROM product WHERE active = 1 AND id_cat = ?";
 		int sum = this.jdbcTemplate.queryForObject(sql, new Object[] { cid }, Integer.class);
 		return sum;
+
+	}
+	
+	public int countNewPublicRating(int cid) {
+		String sql = "SELECT COUNT(*) as sum FROM product WHERE active = 1 AND id_product = ?";
+		int sum = this.jdbcTemplate.queryForObject(sql, new Object[] { cid }, Integer.class);
+		return sum;
+
+	}
+	
+	public int sumRating(int id) {
+		String sql = "SELECT SUM(rating) AS tong FROM product WHERE active = 1 AND id_product = ?";
+		int tong = this.jdbcTemplate.queryForObject(sql, new Object[] { id }, Integer.class);
+		return tong;
 
 	}
 	
@@ -115,7 +130,7 @@ public class ProductDao {
 	}
 
 	public Product getItem(int id) {
-		String sql = "SELECT id_product, p.name AS name , c.name AS cname, picture, preview,details,price,discount,count_views, p.id_cat,active,date_create FROM product AS p INNER JOIN categories AS c ON c.id_cat = p.id_cat  WHERE id_product = ?";
+		String sql = "SELECT id_product, p.name AS name , c.name AS cname, picture,rating, preview,details,price,discount,count_views, p.id_cat,active,date_create FROM product AS p INNER JOIN categories AS c ON c.id_cat = p.id_cat  WHERE id_product = ?";
 
 		try {
 			return jdbcTemplate.queryForObject(sql, new Object[] { id },
@@ -126,7 +141,7 @@ public class ProductDao {
 	}
 
 	public List<Product> getItemsPublicNew() {
-		String sql = "SELECT id_product, p.name AS name , picture, preview,details,price,discount, p.id_cat,active,date_create FROM product AS p INNER JOIN categories AS c ON c.id_cat = p.id_cat WHERE active = 1 ORDER BY id_product DESC LIMIT 8 ";
+		String sql = "SELECT id_product, p.name AS name , picture, preview,details,price,discount, p.id_cat,active,date_create FROM product AS p INNER JOIN categories AS c ON c.id_cat = p.id_cat WHERE active = 1 ORDER BY id_product DESC LIMIT 12";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Product>(Product.class));
 	}
 

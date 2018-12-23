@@ -27,7 +27,7 @@
 	<h4>
 
 		<a target="_blank"
-			href="https://www.nganluong.vn/button_payment.php?receiver=truonglong12a1@gmail.com&product_name=(${id_order})&price=(${tongtien})&return_url=()&comments=(${note })"><img
+			href="https://www.nganluong.vn/button_payment.php?receiver=truonglong12a1@gmail.com&product_name=(${tongtien})&price=(${tongtien})&return_url=()&comments=(${note })"><img
 			src="https://www.nganluong.vn/css/newhome/img/button/safe-pay-3.png"
 			border="0" /></a><br>
 

@@ -25,7 +25,7 @@
 <center>
 	<h4>
 
-		<div id="paypal-button-container"></div>
+		<div id="paypal-button"></div>
 
 	</h4>
 </center>
@@ -33,48 +33,60 @@
 		Gian Sớm Nhất !
 </h4></center>
 
-<!-- organicstore@gmail.com mk 12345678
-	organicstoredemo@gmail.com
+<!-- 
+
+https://www.sandbox.paypal.com/us/signin
+nguoi ban 
+access_token$sandbox$v6pfc4s8rj9x62sz$a8c22562c1739d6b0c151dd8e472c7ba
+Adda3ob6Xml_xU1dqUhVA1yyE13Lp3EzoaBIQrhtEtY1UENbCTm6XfPsBOe2FmPeKRMdB-TBXIWCRBYT
+organic-store@gmail.com
+pass: Truonglong1997
+
+người mua 
+nguoimuahangorganicstore@gmail.com
+
+
+
 -->
 
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script>
-	paypal.Button
-			.render(
-					{
+  paypal.Button.render({
+    // Configure environment
+    env: 'sandbox',
+    client: {
+      sandbox: 'Adda3ob6Xml_xU1dqUhVA1yyE13Lp3EzoaBIQrhtEtY1UENbCTm6XfPsBOe2FmPeKRMdB-TBXIWCRBYT',
+      production: 'demo_production_client_id'
+    },
+    // Customize button (optional)
+    locale: 'en_US',
+    style: {
+      size: 'small',
+      color: 'gold',
+      shape: 'pill',
+    },
 
-						env : 'sandbox', // sandbox | production
+    // Enable Pay Now checkout flow (optional)
+    commit: true,
 
-						// PayPal Client IDs - replace with your own
-						// Create a PayPal app: https://developer.paypal.com/developer/applications/create
-						client : {
-							sandbox : 'access_token$sandbox$wsj7zxm7jt9y8g7s$6c0f8968a691274248cffc0348a9226b',
-							production : '<insert production client id>'
-						},
+    // Set up a payment
+    payment: function(data, actions) {
+      return actions.payment.create({
+        transactions: [{
+          amount: {
+            total: '${tongtien}',
+            currency: 'USD'
+          }
+        }]
+      });
+    },
+    // Execute the payment
+    onAuthorize: function(data, actions) {
+      return actions.payment.execute().then(function() {
+        // Show a confirmation message to the buyer
+        window.alert('Thanh Toán Thành Công! Cảm Ơn Bạn Chúng Tôi Sẽ Giao Hàng Sớm Cho Bạn');
+      });
+    }
+  }, '#paypal-button');
 
-						// Show the buyer a 'Pay Now' button in the checkout flow
-						commit : true,
-
-						// payment() is called when the button is clicked
-						payment : function(data, actions) {
-							// Make a call to the REST api to create the payment
-							return actions.payment.create({
-								payment : {
-									transactions : [ {
-										amount : {
-											total : '${tongtien}',
-											currency : 'USD'
-										}
-									} ]
-								}
-							});
-						},
-						onAuthorize : function(data, actions) {
-
-							return actions.payment.execute().then(function() {
-								window.alert('Thanh Toán Thành Công!');
-							});
-						}
-
-					}, '#paypal-button-container');
 </script>

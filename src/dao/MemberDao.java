@@ -12,6 +12,7 @@ import constant.Defines;
 import entity.Cat;
 import entity.Member;
 import entity.Product;
+import entity.User;
 import util.StringUtil;
 
 @Repository
@@ -45,6 +46,21 @@ public class MemberDao {
 		String query = "SELECT * FROM user WHERE fullname=? ";
 		try {
 			Member obj = (Member) jdbcTemplate.queryForObject(query, new Object[] { objCheck.getFullname() },
+					new BeanPropertyRowMapper(Member.class));
+			if (objCheck.getId_member() == obj.getId_member() && objCheck.getId_member() != 0)
+				return true;
+		} catch (EmptyResultDataAccessException e) {
+			return true;
+		}
+		return false;
+
+	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public boolean checkEmail(Member objCheck) {
+		String query = "SELECT * FROM user WHERE email=? ";
+		try {
+			Member obj = (Member) jdbcTemplate.queryForObject(query, new Object[] { objCheck.getEmail() },
 					new BeanPropertyRowMapper(Member.class));
 			if (objCheck.getId_member() == obj.getId_member() && objCheck.getId_member() != 0)
 				return true;
@@ -114,11 +130,11 @@ public class MemberDao {
 		return jdbcTemplate.query(sql, new Object[] { email }, new BeanPropertyRowMapper<Member>(Member.class));
 	}
 	
-	public Member checkEmail(String email) {
+	public User checkEmail(String email) {
 		String sql = "SELECT * FROM user WHERE email = ?";
 		try {
-			return jdbcTemplate.queryForObject(sql, new Object[] { email},
-					new BeanPropertyRowMapper<Member>(Member.class));
+			return jdbcTemplate.queryForObject(sql, new Object[] { email,},
+					new BeanPropertyRowMapper<User>(User.class));
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}

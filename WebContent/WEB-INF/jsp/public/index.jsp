@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/templates/taglib.jsp"%>
-	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 	<!-- Slider -->
 	<section class="sec-slider">
 		<div class="rev_slider_wrapper fullwidthbanner-container" >
@@ -251,11 +251,7 @@
 					    data-basealign="slide" 
     					data-responsive_offset="on"
 					    >
-						    <a href="shop-sidebar-grid.html" class="btn-slide flex-c-m">
-						    	Mua ngay
-						    	<span class="lnr lnr-chevron-right m-l-7"></span>
-						    	<span class="lnr lnr-chevron-right"></span>
-						    </a>
+						   
 						</div>
 					</li>
 
@@ -274,18 +270,18 @@
 			<div class="hov-img1 pos-relative">
 				<img  src="${pageContext.request.contextPath }/templates/public/images/vegetable.jpg" alt="IMG">
 
-				<a href="shop-sidebar-grid.html" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
+				<a href="${pageContext.request.contextPath}/product/1" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
 					<div class="wrap-pic-max-w">
 						<img src="${pageContext.request.contextPath }/templates/public/images/icons/symbol-03.png" alt="IMG">
 					</div>
 
 					<span class="txt-l-102 cl0 txt-center p-t-30 p-b-13">
-						RAU CỦ
+						${catDao.getItem(1).getName()}
 					</span>
 					
 					<div class="hov1 trans-04">
 						<div class="txt-m-102 cl0 txt-center hov1-child trans-04">
-							- 5 Sản phẩm -
+							- ${productDao.countNewPublicCat(1)} Sản phẩm -
 						</div>
 					</div>
 				</a>
@@ -297,18 +293,18 @@
 			<div class="hov-img1 pos-relative">
 				<img src="${pageContext.request.contextPath }/templates/public/images/vietnam1.jpg" alt="IMG">
 
-				<a href="shop-sidebar-grid.html" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
+				<a href="${pageContext.request.contextPath}/product/2" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
 					<div class="wrap-pic-max-w">
 						<img src="${pageContext.request.contextPath }/templates/public/images/icons/symbol-04.png" alt="IMG">
 					</div>
 
 					<span class="txt-l-102 cl0 txt-center p-t-30 p-b-13">
-						TRÁI CÂY VIỆT NAM
+						${catDao.getItem(2).getName()}
 					</span>
 					
 					<div class="hov1 trans-04">
 						<div class="txt-m-102 cl0 txt-center hov1-child trans-04">
-							- 8 Sản phẩm -
+							- ${productDao.countNewPublicCat(2)} Sản phẩm -
 						</div>
 					</div>
 				</a>
@@ -320,18 +316,18 @@
 			<div class="hov-img1 pos-relative">
 				<img  src="${pageContext.request.contextPath }/templates/public/images/nhapkhau.jpg" alt="IMG">
 
-				<a href="shop-sidebar-grid.html" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
+				<a href="${pageContext.request.contextPath}/product/3" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
 					<div class="wrap-pic-max-w">
 						<img src="${pageContext.request.contextPath }/templates/public/images/icons/symbol-05.png" alt="IMG">
 					</div>
 
 					<span class="txt-l-102 cl0 txt-center p-t-30 p-b-13">
-						TRÁI CÂY NHẬP
+						${catDao.getItem(3).getName()}
 					</span>
 					
 					<div class="hov1 trans-04">
 						<div class="txt-m-102 cl0 txt-center hov1-child trans-04">
-							- 15 Sản phẩm -
+							- ${productDao.countNewPublicCat(3)} Sản phẩm -
 						</div>
 					</div>
 				</a>
@@ -343,18 +339,18 @@
 			<div class="hov-img1 pos-relative">
 				<img src="${pageContext.request.contextPath }/templates/public/images/kho.jpg" alt="IMG">
 
-				<a href="shop-sidebar-grid.html" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
+				<a href="${pageContext.request.contextPath}/product/4" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
 					<div class="wrap-pic-max-w">
 						<img src="${pageContext.request.contextPath }/templates/public/images/icons/symbol-06.png" alt="IMG">
 					</div>
 
 					<span class="txt-l-102 cl0 txt-center p-t-30 p-b-13">
-						ĐỒ KHÔ
+						${catDao.getItem(4).getName()}
 					</span>
 					
 					<div class="hov1 trans-04">
 						<div class="txt-m-102 cl0 txt-center hov1-child trans-04">
-							- 25 Sản phẩm -
+							- ${productDao.countNewPublicCat(4)} Sản phẩm -
 						</div>
 					</div>
 				</a>
@@ -367,7 +363,7 @@
 		<div class="container">
 			<div class="size-a-1 flex-col-c-m p-b-48">
 				<div class="txt-center txt-m-201 cl10 how-pos1-parent m-b-14">
-					Sản phẩm nổi bật
+					Sản Phẩm Nổi Bật
 
 					<div class="how-pos1">
 						<img src="${pageContext.request.contextPath }/templates/public/images/icons/symbol-02.png" alt="IMG">
@@ -402,7 +398,7 @@
 				<c:set var="id" value="${objProduct.id_product }"></c:set>
 							<c:set var="urlDetail"
 								value="${pageContext.request.contextPath}/san-pham/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-75 isotope-item ${objProduct.id_cat }">
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-75 isotope-item slide-inner ${objProduct.id_cat }">
 					
 					<div class="block1">
 						<div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
@@ -414,7 +410,7 @@
 								</a>
 
 								<span class="block1-content-more txt-m-104 cl9 p-t-21 trans-04">
-									${objProduct.price }
+									$${objProduct.price }
 								</span>
 
 								<div class="block1-wrap-icon flex-c-m flex-w trans-05">
@@ -423,11 +419,11 @@
 									</a>
 
 									<a href="javascript:void(0)" onclick="sanpham(${objProduct.id_product})"
-												title="Kích hoạt" class="block1-icon flex-c-m wrap-pic-max-w js-addcart-b1">
+												title="Kích hoạt" class="block1-icon flex-c-m wrap-pic-max-w btn-buy-product">
 										<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart.png" alt="ICON">
 									</a>
 
-									<a href="wishlist.html" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
+									<a href="javascript:void(0)" onclick="addWish(${objProduct.id_product})" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
 										<img class="icon-addwish-b1" src="${pageContext.request.contextPath }/templates/public/images/icons/icon-heart.png" alt="ICON">
 										<img class="icon-addedwish-b1" src="${pageContext.request.contextPath }/templates/public/images/icons/icon-heart2.png" alt="ICON">
 									</a>
@@ -444,7 +440,7 @@
 	</div>
 
 	<!-- Deal -->
-	<section class="sec-deal bg-img1" style="background-image: url('${pageContext.request.contextPath }/templates/public/images/bg-01.jpg');">
+<%-- 	<section class="sec-deal bg-img1" style="background-image: url('${pageContext.request.contextPath }/templates/public/images/bg-01.jpg');">
 		<div class="flex-w flex-m how-pos2-parent">
 			<img class="how-pos2 respon4 dis-none-xl" src="${pageContext.request.contextPath }/templates/public/images/deal1.png" alt="IMG">
 
@@ -539,7 +535,7 @@
 					
 			</div>
 		</div>
-	</section>
+	</section> --%>
 
 	
 	<!-- Product2 -->
@@ -587,7 +583,7 @@
 												</a>
 
 												<span class="block1-content-more txt-m-104 cl9 p-t-21 trans-04">
-													${objProduct.price }
+													$${objProduct.price }
 												</span>
 
 												<div class="block1-wrap-icon flex-c-m flex-w trans-05">
@@ -599,7 +595,7 @@
 														<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart.png" alt="ICON">
 													</a>
 
-													<a href="wishlist.html" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
+													<a href="javascript:void(0)" onclick="addWish(${objProduct.id_product})" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
 														<img class="icon-addwish-b1" src="${pageContext.request.contextPath }/templates/public/images/icons/icon-heart.png" alt="ICON">
 														<img class="icon-addedwish-b1" src="${pageContext.request.contextPath }/templates/public/images/icons/icon-heart2.png" alt="ICON">
 													</a>
@@ -653,7 +649,7 @@
 								
 							<c:forEach var="objProduct" items="${alProductViews }">
 							<c:set var="urlDetail"
-								value="${pageContext.request.contextPath}/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
+								value="${pageContext.request.contextPath}/san-pham/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
 								<div class="item-slick4">
 									
 									<div class="block1">
@@ -666,11 +662,11 @@
 												</a>
 
 												<span class="block1-content-more txt-m-104 cl9 p-t-21 trans-04">
-													${objProduct.price }
+													$${objProduct.price }
 												</span>
 
 												<div class="block1-wrap-icon flex-c-m flex-w trans-05">
-													<a href="product-single.html" class="block1-icon flex-c-m wrap-pic-max-w">
+													<a href="${urlDetail }" class="block1-icon flex-c-m wrap-pic-max-w">
 														<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-view.png" alt="ICON">
 													</a>
 
@@ -678,7 +674,7 @@
 														<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart.png" alt="ICON">
 													</a>
 
-													<a href="wishlist.html" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
+													<a href="javascript:void(0)" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1" onclick="addWish(${objProduct.id_product})">
 														<img class="icon-addwish-b1" src="${pageContext.request.contextPath }/templates/public/images/icons/icon-heart.png" alt="ICON">
 														<img class="icon-addedwish-b1" src="${pageContext.request.contextPath }/templates/public/images/icons/icon-heart2.png" alt="ICON">
 													</a>
@@ -706,3 +702,68 @@
 			</div>
 		</div>
 	</section>
+	
+	
+
+	
+<style>
+	body{
+		position: relative;
+		}
+	.img-product-fly{
+	position: absolute;
+	z-index: 9999999;
+	width: 55px;
+	height: 55px;
+	object-fit: cover;
+	border-radius: 100%;
+	border: 2px solid red; 
+	transition: all 1s ease;
+	animation: MyAnimation 2s;
+	}
+	@keyframes MyAnimation {
+    0%   {transform: scale(0.4)}
+    25%  {transform: scale(1)}
+    75%  {transform: scale(1)}
+    100% {transform: scale(0.4)}
+	}
+</style>
+
+
+<script type="text/javascript">
+$(document).on('click','.btn-buy-product', function(e){
+	e.preventDefault();
+	if($(this).hasClass('disable')){
+		return false;
+	}
+	$(document).find('.btn-buy-product').addClass('disable');
+	var self = $(this);
+	var parent = $(this).parents('.slide-inner');
+	var cart = $(document).find('#shop_cart')
+	var src = parent.find('img').attr('src');
+	var parTop = parent.offset().top;
+	var parLeft = parent.offset().left;
+	$('<img />', { 
+		  class: 'img-product-fly',
+		  src: src
+		 
+	}).appendTo('body').css({
+		'top' : parTop,
+		'left' :parseInt(parLeft) + parseInt(parent.width()) - 40
+	});
+	setTimeout(function(){
+		$(document).find('.img-product-fly').css({
+			'top' : cart.offset().top,
+			'left' : cart.offset().left
+		});
+		setTimeout(function(){
+			$(document).find('.img-product-fly').remove();
+			//var citem = parseInt(cart.find('#cart-total').data('notify'))+1;
+			//cart.find('#cart-total').text(citem).data('notify', citem);
+			$(document).find('.btn-buy-product').removeClass('disable');
+		}, 1100);
+	}, 600);
+});
+
+</script>	
+

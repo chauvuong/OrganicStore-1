@@ -21,6 +21,7 @@ import dao.OrderDao;
 import dao.ProductDao;
 import dao.UserDao;
 import entity.Order;
+import util.SendMail;
 
 @Controller
 @RequestMapping(value = "admin/order")

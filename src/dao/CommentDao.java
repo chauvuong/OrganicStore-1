@@ -21,7 +21,7 @@ public class CommentDao {
 	private JdbcTemplate jdbcTemplate;
 	
 	public List<Comment> getItemsAdmin() {
-		String sql = "SELECT id_comment, p.name AS nname, cmt.name AS name , email, cmt.content AS content,rating,cmt.date_create AS date_create,cmt.product_id AS product_id FROM comment AS cmt INNER JOIN product AS p ON cmt.product_id = p.id_product ORDER BY cmt.id_comment DESC";
+		String sql = "SELECT id_comment, p.name AS nname, cmt.name AS name , email, cmt.content AS content,cmt.rating,cmt.date_create AS date_create,cmt.product_id AS product_id FROM comment AS cmt INNER JOIN product AS p ON cmt.product_id = p.id_product ORDER BY cmt.id_comment DESC";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Comment>(Comment.class));
 	}
 
@@ -40,7 +40,7 @@ public class CommentDao {
 	}
 
 	public List<Comment> getListCommenPublic(int did) {
-		String sql = "SELECT id_comment, cmt.name AS name , email, cmt.content AS content,rating,cmt.date_create AS date_create,cmt.product_id AS product_id FROM comment AS cmt INNER JOIN product AS p ON cmt.product_id = p.id_product WHERE cmt.product_id = ? ORDER BY cmt.id_comment DESC";
+		String sql = "SELECT id_comment, cmt.name AS name , email, cmt.content AS content,cmt.rating,cmt.date_create AS date_create,cmt.product_id AS product_id FROM comment AS cmt INNER JOIN product AS p ON cmt.product_id = p.id_product WHERE cmt.product_id = ? ORDER BY cmt.id_comment DESC";
 		return jdbcTemplate.query(sql, new Object[] { did }, new BeanPropertyRowMapper<Comment>(Comment.class));
 	}
 	

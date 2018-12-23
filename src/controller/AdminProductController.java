@@ -147,7 +147,7 @@ public class AdminProductController {
 		String appPath = request.getServletContext().getRealPath("");
 		String dirPath = appPath + File.separator + Defines.DIR_UPLOAD;
 		// String dirPath = appPath + File.separator + "files";
-		System.out.println("dirPath: " + dirPath);
+		//System.out.println("dirPath: " + dirPath);
 		File saveDir = new File(dirPath);
 		if (!saveDir.exists()) {
 			// náº¿u file ko ton tai thi tao

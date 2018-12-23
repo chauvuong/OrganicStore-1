@@ -9,6 +9,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 
 public class Product {
+
 	private int id_product;
 	/*@NotEmpty(message = "-- Vui Lòng Nhập Tên Sản Phẩm")*/
 	private String name;
@@ -16,6 +17,7 @@ public class Product {
 	@Size(min = 5, max = 30, message = "-- Vui Lòng Nhập Từ Khoảng 5 >> 20 ký Tự")*/
 	private String preview;
 	private String picture;
+	private int rating;
 /*	@NotEmpty(message = "-- Vui Lòng Nhập Chi Tiết")
 	@Size(min = 5, max = 30, message = "-- Vui Lòng Nhập Từ Khoảng 10 >> 30 ký Tự")*/
 	private String details;
@@ -28,18 +30,15 @@ public class Product {
 	private String cname;
 	private int quatity;
 	
-	
-	public Product(int id_product, String name, String preview, String picture, String details,
-			 int price, int discount, int id_cat, Timestamp date_create,
-			int active, int count_views, String cname, int quatity) {
+	public Product(int id_product, String name, String preview, String picture, int rating, String details, int price,
+			int discount, int id_cat, Timestamp date_create, int active, int count_views, String cname, int quatity) {
 		super();
 		this.id_product = id_product;
 		this.name = name;
 		this.preview = preview;
 		this.picture = picture;
-		
+		this.rating = rating;
 		this.details = details;
-		
 		this.price = price;
 		this.discount = discount;
 		this.id_cat = id_cat;
@@ -99,7 +98,14 @@ public class Product {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
+	
+	public int getRating() {
+		return rating;
+	}
 
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
 	public String getDetails() {
 		return details;
 	}

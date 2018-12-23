@@ -47,7 +47,7 @@
 							</div>
 							<p><form:errors path="objCat.name" cssStyle="color:red; font-family: cursive;"></form:errors></p>
 
-							<input type="submit" value="Sửa" id="submit" name="submit"
+							<input type="submit" value="Lưu" id="submit" name="submit"
 								class="btn btn-primary" /> <input type="reset" value="Nhập Lại"
 								id="submit" class="btn btn-danger" />
 						</form>

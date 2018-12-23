@@ -1,12 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/templates/taglib.jsp"%>
+<!-- Load Facebook SDK for JavaScript -->
+
+<script>
+	function addWish(id) {
+		$.ajax({
+			url : "${pageContext.request.contextPath}/addWish",
+			type : 'POST',
+			cache : false,
+			data : {
+				id : id,
+			},
+			error : function() {
+				alert('Thêm vào danh sách thất bại!!!')
+			}
+		});
+	}
+	function sanpham(id) {
+		$.ajax({
+			url : "${pageContext.request.contextPath}/cart",
+			type : 'POST',
+			cache : false,
+			data : {
+				aid_sp : id,
+			},
+			success : function(data) {
+				$("#content_shop_cart").html(data);
+				$.ajax({
+					url : "${pageContext.request.contextPath}/upsize",
+					type : 'POST',
+					cache : false,
+					success : function(data) {
+						$(".cartnum").html(data);
+					},
+				});
+			},
+			error : function() {
+				alert('Thêm Giỏ Hàng Thất Bại!!!')
+			}
+		});
+	}
+</script>
 <footer class="bg12">
 	<div class="container">
 		<div class="wrap-footer flex-w p-t-60 p-b-62">
 			<div class="footer-col1">
 				<div class="footer-col-title">
-					<a href="#"> <img
+					<a href="javascript:void(0)"> <img
 						src="${pageContext.request.contextPath }/templates/public/images/icons/logochau.png"
 						alt="LOGO">
 					</a>
@@ -48,25 +89,29 @@
 							src="${pageContext.request.contextPath }/templates/public/images/icons/icon-pin.png"
 							alt="ICON-MAIL">
 					</span> <a href="javascript:void(0)"
-						class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5"> Số 54 Nguyễn Lương Bằng, Đà Nẵng </a></li>
+						class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5"> Số 54 Nguyễn
+							Lương Bằng, Đà Nẵng </a></li>
 
 					<li class="p-b-16"><span class="size-w-11"> <img
 							src="${pageContext.request.contextPath }/templates/public/images/icons/icon-pin.png"
 							alt="ICON-MAIL">
 					</span> <a href="javascript:void(0)"
-						class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5"> 79 Trương Định,  Quận 1 , HCM </a></li>
+						class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5"> 79 Trương
+							Định, Quận 1 , HCM </a></li>
 
 					<li class="p-b-16"><span class="size-w-11"> <img
 							src="${pageContext.request.contextPath }/templates/public/images/icons/icon-pin.png"
 							alt="ICON-MAIL">
 					</span> <a href="javascript:void(0)"
-						class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5"> 125 Nguyễn Thị Minh Khai, Hà Nội </a></li>
+						class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5"> 125 Nguyễn Thị
+							Minh Khai, Hà Nội </a></li>
 
 					<li class="p-b-16"><span class="size-w-11"> <img
 							src="${pageContext.request.contextPath }/templates/public/images/icons/icon-pin.png"
 							alt="ICON-MAIL">
 					</span> <a href="javascript:void(0)"
-						class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5"> 202 Lê Duẩn, Buôn Ma Thuột </li>
+						class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5"> 202 Lê Duẩn,
+							Buôn Ma Thuột </li>
 
 
 				</ul>
@@ -122,12 +167,15 @@
 					</div>
 
 					<div class="size-w-13 m-b-10">
-						<a href="https://www.facebook.com/ITLONGTRUONG?ref=bookmarks" class="dis-block size-a-7 bg-img1 hov4"
+						<a href="https://www.facebook.com/ITLONGTRUONG?ref=bookmarks"
+							class="dis-block size-a-7 bg-img1 hov4"
 							style="background-image: url('${pageContext.request.contextPath }/templates/public/images/facebook.jpg');"></a>
 					</div>
 
 					<div class="size-w-13 m-b-10">
-						<a href="https://www.instagram.com/truonglong_it/?fbclid=IwAR0-OKbCBTWhnleOulglh-gCC6oFzM0zSK-u93FKpMsLgZl4TL99_fDzFwM" class="dis-block size-a-7 bg-img1 hov4"
+						<a
+							href="https://www.instagram.com/truonglong_it/?fbclid=IwAR0-OKbCBTWhnleOulglh-gCC6oFzM0zSK-u93FKpMsLgZl4TL99_fDzFwM"
+							class="dis-block size-a-7 bg-img1 hov4"
 							style="background-image: url('${pageContext.request.contextPath }/templates/public/images/Instagram.png');"></a>
 					</div>
 
@@ -169,8 +217,6 @@
 		class="lnr lnr-chevron-up"></span>
 	</span>
 </div>
-
-
 
 <!--===============================================================================================-->
 <script

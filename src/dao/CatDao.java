@@ -21,6 +21,7 @@ public class CatDao {
 
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Cat>(Cat.class));
 	}
+	
 
 	public int addItem(Cat cat) {
 		String sql = "INSERT INTO categories(name) VALUE(?)";
@@ -64,4 +65,7 @@ public class CatDao {
 		String sql = "SELECT COUNT(*) FROM categories ORDER BY id_cat DESC";
 		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
+	
+	
+	
 }

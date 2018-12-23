@@ -134,6 +134,22 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/admin/comment/index.jsp" />
 	</definition>
 	
+	<!-- discount -->
+	
+	
+	<definition name="admin.discount.index" extends="admin.template">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/discount/index.jsp" />
+	</definition>
+
+	<definition name="admin.discount.add" extends="admin.template">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/discount/add.jsp" />
+	</definition>
+
+	<definition name="admin.discount.edit" extends="admin.template">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/discount/edit.jsp" />
+	</definition>
 	
 	
 	
@@ -193,6 +209,7 @@
 	<definition name="public.shop.checkout" extends="public.template1">
 		<put-attribute name="body" value="/WEB-INF/jsp/public/checkout.jsp" />
 	</definition>
+
 	<definition name="public.shop.register" extends="public.template1">
 		<put-attribute name="body" value="/WEB-INF/jsp/public/register.jsp" />
 	</definition>
@@ -201,6 +218,12 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/public/myaccount.jsp" />
 	</definition>
 	
+	<definition name="public.shop.myorder" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/myorder.jsp" />
+	</definition>
+	
+	
+	
 	<definition name="public.shop.detail" extends="public.template1">
 		<put-attribute name="body" value="/WEB-INF/jsp/public/detail.jsp" />
 	</definition>
@@ -208,6 +231,17 @@
 	<definition name="public.shop.confirm" extends="public.template1">
 		<put-attribute name="body" value="/WEB-INF/jsp/public/confirm.jsp" />
 	</definition>
+	
+	
+	<definition name="public.shop.wishlist" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/wishlist.jsp" />
+	</definition>
+	<definition name="public.shop.product" extends="public.template1">
+		<put-attribute name="body" value="/WEB-INF/jsp/public/product.jsp" />
+	</definition>
+	
+	
+	
 	
 	<definition name="public.shop.paysuccess" extends="public.template1">
 		<put-attribute name="body" value="/WEB-INF/jsp/public/paysuccess.jsp" />

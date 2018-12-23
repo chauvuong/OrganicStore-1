@@ -126,7 +126,7 @@
 								</c:otherwise>
 							</c:choose>
 
-							<input type="submit" value="Sửa" class="btn btn-primary" /> <input
+							<input type="submit" value="Lưu" class="btn btn-primary" /> <input
 								type="reset" value="Nhập Lại" class="btn btn-danger" />
 						</form>
 					</div>

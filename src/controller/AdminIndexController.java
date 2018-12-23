@@ -1,5 +1,7 @@
 package controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -8,6 +10,7 @@ import dao.CatDao;
 import dao.MemberDao;
 import dao.OrderDao;
 import dao.ProductDao;
+import dao.UserDao;
 
 @Controller
 @RequestMapping("admin")
@@ -20,9 +23,11 @@ public class AdminIndexController {
 	private ProductDao productDao;
 	@Autowired
 	private CatDao catDao;
+	@Autowired
+	private UserDao userDao ;
 	
 	@RequestMapping("")
-	public String index(ModelMap modelMap) {
+	public String index(ModelMap modelMap, Principal principal) {
 		int sumMember = memberDao.countItem();
 		int sumNews = productDao.countItem();
 		int sumOrder = orderDao.countItem();
@@ -31,6 +36,8 @@ public class AdminIndexController {
 		modelMap.addAttribute("sumNews", sumNews);
 		modelMap.addAttribute("sumOrder", sumOrder);
 		modelMap.addAttribute("sumCat", sumCat);
+		modelMap.addAttribute("fullname", principal.getName());
+		
 		return "admin.index.index";
 	}
 }

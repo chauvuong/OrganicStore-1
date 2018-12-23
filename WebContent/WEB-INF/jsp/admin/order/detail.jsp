@@ -50,14 +50,14 @@
 										<td>${sanpham}</td>
 										<td>${soluong}</td>
 										<td>$${dongia }</td>
-										<td>$${thanhtien } (USD)</td>
+										<td>$${thanhtien }</td>
 									</tr>
 								</c:forEach>
 								<tr>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><b>Tổng Cộng Thanh Toán:</b></td>
+									<td><b>Tổng Cộng:</b></td>
 									<td style="color:red">$${tong} (USD)</td>
 								</tr>
 								
@@ -65,7 +65,7 @@
 			</table>
 					
 				</section>
-
+z
 			</div>
 		</div>
 	</section>

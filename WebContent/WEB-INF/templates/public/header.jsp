@@ -57,12 +57,12 @@
 								
 
 								<li>
-									<a href="javascript:void(0)">SẢN PHẨM</a>
+									<a href="${pageContext.request.contextPath}/danh-muc/0">SẢN PHẨM</a>
 									<ul class="sub-menu">
 										<c:forEach var="objCat" items="${listCat }">
-											<c:set value="${pageContext.request.contextPath}/danh-muc/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
+											<c:set value="${pageContext.request.contextPath}/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
 											var="slugName"></c:set>
-										<li><a href="${slugName }">${objCat.name}</a></li>
+										<li><a href="${pageContext.request.contextPath}/danh-muc/${objCat.id_cat}">${objCat.name}</a></li>
 										</c:forEach>
 									</ul>
 								</li>
@@ -73,7 +73,7 @@
 								</li> -->
 	
 								<li>
-									<a href="${pageContext.request.contextPath }/contact">LIÊN HỆ</a>
+									<a href="${pageContext.request.contextPath }/lien-he">LIÊN HỆ</a>
 									
 								</li>
 								
@@ -109,8 +109,8 @@
 								</div>	
 								<div class="cart-header menu-click-child trans-04">
 									<marquee width="100%">Chào ${userInfo.fullname }</marquee>
-									<%-- <a href="${pageContext.request.contextPath }/" class="txt-s-101 cl9 hov-cl10 trans-04">Chào ${userInfo.fullname }</a><br/> --%>
-									<a href="${pageContext.request.contextPath }/myaccount/${userInfo.id_member}" class="txt-s-101 cl9 hov-cl10 trans-04">Thông Tin Cá Nhân</a><br/>
+								 	<a href="${pageContext.request.contextPath }/san-pham-yeu-thich" class="txt-s-101 cl9 hov-cl10 trans-04">Sản Phẩm Yêu Thích</a><br/>
+									<a href="${pageContext.request.contextPath }/thong-tin-cua-toi" class="txt-s-101 cl9 hov-cl10 trans-04">Thông Tin Cá Nhân</a><br/>
 									<a href="${pageContext.request.contextPath }/logout-member" class="txt-s-101 cl9 hov-cl10 trans-04">Đăng xuất</a>
 								</div>
 							</div>
@@ -154,14 +154,14 @@
 												Quên mật khẩu?
 											</a> -->
 										
-										<a href="${pageContext.request.contextPath }/register" class="txt-s-101 cl9 hov-cl10 trans-04">
+										<a href="${pageContext.request.contextPath }/dang-ky-tai-khoan" class="txt-s-101 cl9 hov-cl10 trans-04">
 											Đăng ký
 										</a>
 										<div class="social">
 											<div class="social-inner">
-											  <a class="fa fa-2x fa-google btn btn-danger" href="#"></a>
-											  <a class="fa fa-2x fa-twitter btn btn-info" href="#"></a>
-											  <a class="fa fa-2x fa-facebook btn btn-primary" href="#"></a>
+											  <a class="fa fa-2x fa-google btn btn-danger" href="javascript:void(0)"></a>
+											  <a class="fa fa-2x fa-twitter btn btn-info" href="javascript:void(0)"></a>
+											  <a class="fa fa-2x fa-facebook btn btn-primary" href="javascript:void(0)"></a>
 											</div>
 										</div>
 								</div>
@@ -171,18 +171,29 @@
 							</c:otherwise>
 							</c:choose>
 						
-							<div class="wrap-cart-header h-full flex-m m-l-10 menu-click">
-							
-								<div class="icon-header-item flex-c-m trans-04 icon-header-noti" data-notify="0">
-									<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart-2.png" alt="CART">
-								</div>
+							<div class="wrap-cart-header h-full flex-m m-l-10 menu-click" id="shop_cart">
+								<div class="cartnum">
+								<c:choose>
+								<c:when test="${empty listCart}">
+									<div class="icon-header-item flex-c-m trans-04 icon-header-noti"  data-notify="0">
+										<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart-2.png" alt="CART">
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div class="icon-header-item flex-c-m trans-04 icon-header-noti"  data-notify="${listCart.size()}">
+										<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart-2.png" alt="CART">
+									</div>
 								
+								</c:otherwise>
+								</c:choose>
+									
+								</div>
 					
 								<div class="cart-header menu-click-child trans-04" id="content_shop_cart">
 									<div class="bo-b-1 bocl15">
 										<div class="size-h-2 js-pscroll m-r--15 p-r-15">
 										<c:choose>
-										<c:when test="${listCart  != null}">
+										<c:when test="${!empty listCart}">
 											<c:forEach items="${listCart}" var="objCart">
 												<c:set var="name" value="${objCart.name}"></c:set>
 												<c:set var="id" value="${objCart.id_product}"></c:set>
@@ -198,7 +209,7 @@
 														<a href="${pageContext.request.contextPath}/san-pham/${slug}-${id}.html" class="txt-s-108 cl3 hov-cl10 trans-04">
 															${objCart.name}
 														</a>
-
+														
 														<span class="txt-s-101 cl9">
 															$${objCart.price}
 														</span>
@@ -211,8 +222,8 @@
 
 												<div class="size-w-14 flex-b">
 													<button class="lh-10">
-														<a href="${pageContext.request.contextPath}/huy/${id}" onclick="return confirm('Bạn Có Muốn Xóa Sản Phẩm Ra Khỏi Giỏ Hàng Không ?')">
-														<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-close.png" alt="CLOSE" >
+														<a href="${pageContext.request.contextPath}/huy/${id}" >
+															<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-close.png" alt="CLOSE" >
 														</a>
 													</button>
 												</div>
@@ -233,7 +244,7 @@
 									</div>
 										
 									<c:choose>
-									<c:when test="${listCart != null}">
+									<c:when test="${!empty listCart}">
 									<div class="flex-w flex-sb-m p-t-22 p-b-12">
 										<span class="txt-m-103 cl3 p-r-20">
 											Tổng Tiền :
@@ -254,11 +265,11 @@
 										</span>
 									</div> -->
 									
-									<a href="${pageContext.request.contextPath }/cart" class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
+									<a href="${pageContext.request.contextPath }/gio-hang" class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
 										Xem Giỏ Hàng
 									</a>
 									<br />
-									<a href="${pageContext.request.contextPath }/checkout" class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
+									<a href="${pageContext.request.contextPath }/thanh-toan" class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
 										Thanh Toán
 									</a>	 
 									</c:when>
@@ -283,25 +294,5 @@
 				<!--Edit Search-->
 			</div>	
 		</div>
-
 	</header>
-<script type="text/javascript">
- function sanpham(id){
-		$.ajax({
-			url:"${pageContext.request.contextPath}/cart",
-			type: 'POST',
-			cache: false,
-			data: {
-				aid_sp:id,			
-			},
-			success: function(data){
-				$("#content_shop_cart").html(data);
-			},
-			error: function (){
-				alert('Thêm Giỏ Hàng Thất Bại!!!')
-			}
-		});	
-		
-	}
 
-</script>	

@@ -20,7 +20,10 @@ public class OrderDao {
 		String sql = "SELECT * FROM orders";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Order>(Order.class));
 	}
-
+	public List<Order> getItemByMemId(int id) {
+		String sql = "SELECT * FROM orders WHERE id_member=? ORDER BY id_order DESC";
+		return jdbcTemplate.query(sql,new Object[] { id }, new BeanPropertyRowMapper<Order>(Order.class));
+	}
 	public int addItem(Order objItem) {
 		String query = "INSERT INTO orders(name_customer,place, phone, pay, note, email, date_create, id_member) VALUES (?,?,?,?,?,?,?,?)";
 		return jdbcTemplate.update(query, new Object[] { objItem.getName_customer(), objItem.getPlace(),objItem.getPhone(), objItem.getPay() ,objItem.getNote(),objItem.getEmail(), objItem.getDate_create(), objItem.getId_member() });

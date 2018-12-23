@@ -28,10 +28,10 @@
 			<li><a class="" href="widgets.html"> <i class="icon_genius"></i>
 					<span>Widgets</span>
 			</a></li> -->
-			<li><a class="" href="chart-chartjs.html"> <i
+			<!-- <li><a class="" href="chart-chartjs.html"> <i
 					class="icon_piechart"></i> <span>Biểu Đồ</span>
 
-			</a></li>
+			</a></li> -->
 
 			<li class="sub-menu"><a href="javascript:;" class=""> <i
 					class="icon_table"></i> <span>Quản Lý</span> <span
@@ -47,6 +47,7 @@
 					<li><a class="" href="${pageContext.request.contextPath }/admin/contact">Liên Hệ</a></li>
 					<li><a class="" href="${pageContext.request.contextPath }/admin/comment">Bình Luận</a></li>
 					<li><a class="" href="${pageContext.request.contextPath }/admin/payment">Hình Thức Thanh Toán</a></li>
+					<li><a class="" href="${pageContext.request.contextPath }/admin/discount">Mã Giảm Giá</a></li>
 					
 					
 				</ul></li>

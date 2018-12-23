@@ -59,7 +59,7 @@
 			</div>
 
 			<!--logo start-->
-			<a href="${pageContext.request.contextPath }/admin" class="logo">ADMIN <span class="lite">Home</span></a>
+			<a href="${pageContext.request.contextPath }/admin" class="logo">ADMIN <span class="lite"></span></a>
 			<!--logo end-->
 
 			<div class="nav search-row" id="top_menu">
@@ -85,11 +85,11 @@
 					<a data-toggle="dropdown"
 						class="dropdown-toggle" href="#"> <span class="profile-ava">
 								<img alt="" src="${pageContext.request.contextPath }/templates/admin/img/avatar1_small.jpg">
-						</span> <span class="username">ADMIN</span> <b class="caret"></b>
+						</span> <span class="username">${fullname }</span> <b class="caret"></b>
 					</a>
 						<ul class="dropdown-menu extended logout">
 							<div class="log-arrow-up"></div>
-							<li class="eborder-top"><a href="#"><i
+							<li class="eborder-top"><a href="javascript:void(0)"><i
 									class="icon_profile"></i> My Profile</a></li>
 							<li><a href="${pageContext.request.contextPath }/logout"><i class="icon_key_alt"></i>
 									Log Out</a></li>		
