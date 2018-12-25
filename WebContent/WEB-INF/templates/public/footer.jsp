@@ -76,6 +76,9 @@
 							src="${pageContext.request.contextPath }/templates/public/images/icons/icon-phone.png"
 							alt="ICON-MAIL">
 					</span> <span class="size-w-12 p-t-1"> 0236 3777 999 </span></li>
+					
+					
+					<div class="fb-page" data-href="https://www.facebook.com/Organic-Store-269100330436961/?modal=admin_todo_tour" data-tabs="timeline" data-width="320" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Organic-Store-269100330436961/?modal=admin_todo_tour" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Organic-Store-269100330436961/?modal=admin_todo_tour">Organic Store</a></blockquote></div>
 				</ul>
 			</div>
 
@@ -209,6 +212,14 @@
 		</div>
 	</div>
 </footer>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=672612083133244&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 <!-- Back to top -->

@@ -63,6 +63,11 @@ public class ProductDao {
 		return jdbcTemplate.query(sql, new Object[] { "%" + objProduct.getName() + "%"  }, new BeanPropertyRowMapper<Product>(Product.class));
 	}
 	
+	public List<Product> getItemsSearchPublic(Product objProduct) {
+		String sql = "SELECT id_product, p.name AS name , picture, preview,price,discount, p.id_cat,active,date_create FROM product AS p INNER JOIN categories AS c ON c.id_cat = p.id_cat WHERE active = 1 AND p.name LIKE ?  ORDER BY id_product DESC";
+		return jdbcTemplate.query(sql, new Object[] { "%" + objProduct.getName() + "%"  }, new BeanPropertyRowMapper<Product>(Product.class));
+	}
+	
 	public int countItemSearch() {
 		String sql = "SELECT COUNT(*) FROM product INNER JOIN categories ON categories.id_cat=product.id_cat ORDER BY id_product DESC";
 		return jdbcTemplate.queryForObject(sql, Integer.class);

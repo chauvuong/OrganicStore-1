@@ -284,11 +284,12 @@
 				</nav>
 				<!--Edit Search-->
 				<div style="display: none" class="container-search-header" id="desktop-search" >
-					<form class="wrap-search-header flex-w">
+					<form action="${pageContext.request.contextPath }/search" method="post" class="wrap-search-header flex-w">
 						<button class="flex-c-m trans-04">
 							<span class="lnr lnr-magnifier"></span>
 						</button>
 						<input class="plh1" type="text" name="search" placeholder="Search tất cả">
+						
 					</form>
 				</div>
 				<!--Edit Search-->
