@@ -29,7 +29,7 @@
 	<h1 style="color: green; font-family: cursive;">${msg}</h1>
 </center>
 <!-- content page -->
-<div class="bg0 p-t-95 p-b-50">
+<div class="bg0 p-t-10 p-b-5">
 	<div class="container">
 		<form enctype="multipart/form-data" method="post"
 			action="${pageContext.request.contextPath}/addUser">
@@ -37,7 +37,7 @@
 				<div class="p-l-15 p-rl-0-lg">
 					<h4 class="txt-m-124 cl3 p-b-28">Đăng ký Tài Khoản</h4>
 
-					<form class="how-bor3 p-rl-30 p-t-32 p-b-66">
+					<form class="how-bor3 p-rl-30 p-t-32 p-b-66" >
 						<div class="p-b-24">
 							<div class="txt-s-101 cl6 p-b-10">
 								Email <span class="cl12">*</span>
@@ -98,7 +98,7 @@
 
 
 
-						<div class="flex-w flex-m p-t-15">
+						<div class="flex-w flex-m p-t-5">
 							<button
 								class="flex-c-m txt-s-105 cl0 bg10 size-a-39 hov-btn2 trans-04 p-rl-10 m-r-18">
 								Đăng ký</button>
@@ -109,7 +109,7 @@
 		</form>
 	</div>
 
-
+	
 
 	<script>
 		function checkEmail(email) {

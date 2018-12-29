@@ -51,7 +51,7 @@
 
 						<c:forEach items="${listCart}" var="objCart">
 							<c:set var="urlDetail"
-								value="${pageContext.request.contextPath}/${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
+								value="${pageContext.request.contextPath}/san-pham-${slugUtil.createSlug(objProduct.name) }-${objProduct.id_product }.html"></c:set>
 							<c:set var="name" value="${objCart.name}"></c:set>
 							<c:set var="id" value="${objCart.id_product}"></c:set>
 							<c:set var="gia" value="${objCart.price}"></c:set>

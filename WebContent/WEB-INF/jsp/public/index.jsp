@@ -270,7 +270,7 @@
 			<div class="hov-img1 pos-relative">
 				<img  src="${pageContext.request.contextPath }/templates/public/images/vegetable.jpg" alt="IMG">
 
-				<a href="${pageContext.request.contextPath}/product/1" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
+				<a href="${pageContext.request.contextPath}/danh-muc/1" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
 					<div class="wrap-pic-max-w">
 						<img src="${pageContext.request.contextPath }/templates/public/images/icons/symbol-03.png" alt="IMG">
 					</div>
@@ -293,7 +293,7 @@
 			<div class="hov-img1 pos-relative">
 				<img src="${pageContext.request.contextPath }/templates/public/images/vietnam1.jpg" alt="IMG">
 
-				<a href="${pageContext.request.contextPath}/product/2" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
+				<a href="${pageContext.request.contextPath}/danh-muc/2" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
 					<div class="wrap-pic-max-w">
 						<img src="${pageContext.request.contextPath }/templates/public/images/icons/symbol-04.png" alt="IMG">
 					</div>
@@ -316,7 +316,7 @@
 			<div class="hov-img1 pos-relative">
 				<img  src="${pageContext.request.contextPath }/templates/public/images/nhapkhau.jpg" alt="IMG">
 
-				<a href="${pageContext.request.contextPath}/product/3" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
+				<a href="${pageContext.request.contextPath}/danh-muc/3" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
 					<div class="wrap-pic-max-w">
 						<img src="${pageContext.request.contextPath }/templates/public/images/icons/symbol-05.png" alt="IMG">
 					</div>
@@ -339,7 +339,7 @@
 			<div class="hov-img1 pos-relative">
 				<img src="${pageContext.request.contextPath }/templates/public/images/kho.jpg" alt="IMG">
 
-				<a href="${pageContext.request.contextPath}/product/4" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
+				<a href="${pageContext.request.contextPath}/danh-muc/4" class="s-full ab-t-l flex-col-c-m bg11 p-all-15 hov1-parent">
 					<div class="wrap-pic-max-w">
 						<img src="${pageContext.request.contextPath }/templates/public/images/icons/symbol-06.png" alt="IMG">
 					</div>
@@ -762,7 +762,7 @@ $(document).on('click','.btn-buy-product', function(e){
 			//cart.find('#cart-total').text(citem).data('notify', citem);
 			$(document).find('.btn-buy-product').removeClass('disable');
 		}, 1100);
-	}, 600);
+	}, 200);
 });
 
 </script>	

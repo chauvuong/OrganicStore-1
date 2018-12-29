@@ -52,6 +52,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath }/templates/public/css/main.css">
 <!--===============================================================================================-->
+
 </head>
 <body class="animsition">
 

@@ -41,7 +41,7 @@
 									<td>${objComment.name }</td>
 									<td>${objComment.email }</td>
 									<td>${objComment.content }</td>
-									<td>${objComment.rating }*</td>
+									<td>${objComment.rating }<i class="fa fa-star" aria-hidden="true"></i></td>
 									<td>${objComment.date_create }</td>
 									<td>
 										<div>

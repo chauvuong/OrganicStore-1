@@ -24,6 +24,11 @@ public class CommentDao {
 		String sql = "SELECT id_comment, p.name AS nname, cmt.name AS name , email, cmt.content AS content,cmt.rating,cmt.date_create AS date_create,cmt.product_id AS product_id FROM comment AS cmt INNER JOIN product AS p ON cmt.product_id = p.id_product ORDER BY cmt.id_comment DESC";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Comment>(Comment.class));
 	}
+	
+	public List<Comment> getItemsCommentNews() {
+		String sql = "SELECT id_comment, p.name AS nname, cmt.name AS name , email, cmt.content AS content,cmt.rating,cmt.date_create AS date_create,cmt.product_id AS product_id FROM comment AS cmt INNER JOIN product AS p ON cmt.product_id = p.id_product ORDER BY cmt.date_create DESC LIMIT 5";
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Comment>(Comment.class));
+	}
 
 	
 
@@ -56,6 +61,11 @@ public class CommentDao {
 		int sum = this.jdbcTemplate.queryForObject(sql, new Object[] { cid }, Integer.class);
 		return sum;
 
+	}
+	
+	public int countItem() {
+		String sql = "SELECT COUNT(*) FROM comment ORDER BY id_comment DESC";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
 	
 	

@@ -113,7 +113,7 @@
 										</td>
 										<td class="column-2">
 											<div class="flex-w flex-sb-m">
-												<a href="${pageContext.request.contextPath }/thong-tin-cua-toi/chi-tiet-don-hang/${objOder.id_order }" 
+												<a href="${pageContext.request.contextPath }/thong-tin-cua-toi/chi-tiet-don-hang/${objOder.id_order }/${userInfo.id_member}" 
 													class="flex-c-m txt-s-103 cl6 size-a-2 how-btn1 bo-all-1 bocl11 hov-btn1 trans-04">
 													Xem <span class="lnr lnr-chevron-right m-l-1"></span> <span
 													class="lnr lnr-chevron-right"></span>

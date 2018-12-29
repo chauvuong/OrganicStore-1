@@ -28,7 +28,7 @@ public class ProductDao {
 	}
 
 	public int addItem(Product product) {
-		String sql = "INSERT INTO product(name, preview, picture, details,  price, discount,id_cat, active, count_views, rating ) VALUE(?,?,?,?,?,?,?,1,0,5)";
+		String sql = "INSERT INTO product(name, preview, picture, details,  price, discount,id_cat, active, count_views, rating ) VALUE(?,?,?,?,?,?,?,1,0,0)";
 		return jdbcTemplate.update(sql,
 				new Object[] { product.getName(), product.getPreview(), product.getPicture(),
 						 product.getDetails(), 
@@ -46,6 +46,10 @@ public class ProductDao {
 				new Object[] { product.getName(), product.getPreview(), product.getPicture(),
 						 product.getDetails(),
 						product.getPrice(), product.getDiscount(), product.getId_cat(), product.getId_product() });
+	}
+	public int editRating(int product, int rating) {
+		String sql = "UPDATE product SET rating = ? WHERE id_product = ? ";
+		return jdbcTemplate.update(sql, new Object[] { rating,product});
 	}
 
 	public List<Product> getItemsSearchCat(Product objProduct) {
@@ -121,7 +125,7 @@ public class ProductDao {
 	}
 	
 	public int sumRating(int id) {
-		String sql = "SELECT SUM(rating) AS tong FROM product WHERE active = 1 AND id_product = ?";
+		String sql = "SELECT COUNT(*) AS tong FROM comment WHERE product_id = ?";
 		int tong = this.jdbcTemplate.queryForObject(sql, new Object[] { id }, Integer.class);
 		return tong;
 
@@ -159,6 +163,12 @@ public class ProductDao {
 		String sql = "SELECT id_product, p.name AS name , picture, preview,details,price,discount, p.id_cat,active,date_create FROM product AS p INNER JOIN categories AS c ON c.id_cat = p.id_cat ORDER BY count_views DESC";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Product>(Product.class));
 	}
+	
+	public int getItemsRating(int id) {
+		String sql = "SELECT rating FROM product WHERE id_product = ?";
+		return jdbcTemplate.queryForObject(sql,new Object[] { id }, Integer.class);
+	}
+	
 	
 	
 	

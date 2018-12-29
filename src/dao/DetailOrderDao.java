@@ -21,6 +21,16 @@ public class DetailOrderDao {
 		return jdbcTemplate.query(query, new Object[] { id_order },
 				new BeanPropertyRowMapper<DetailOrder>(DetailOrder.class));
 	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public List<DetailOrder> getItemsPublic(int id_order, int uid) {
+		String query = "SELECT * FROM detailorder JOIN product ON detailorder.id_product = product.id_product JOIN orders on orders.id_order = detailorder.id_order WHERE orders.id_order= ? and orders.id_member = ?";
+		return jdbcTemplate.query(query, new Object[] { id_order, uid },
+				new BeanPropertyRowMapper<DetailOrder>(DetailOrder.class));
+	}
+	
+	
+	
 
 	public int addItem(Product objItem, int id_order) {
 		String query = "INSERT INTO detailorder(id_order,id_product, quatity) VALUES (?,?,?)";

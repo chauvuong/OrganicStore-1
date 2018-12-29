@@ -43,8 +43,8 @@
 			<table class="table-shopping-cart">
 				<tr class="table_head bg12">
 					<th class="column-1 p-l-30">Tên sản phẩm</th>
-					<th class="column-2">Giá</th>
-					<th class="column-3">Thông tin</th>
+					<th class="column-4">Giá</th>
+					<th class="column-2">Thông tin</th>
 					<th class="column-4">Thêm vào giỏ</th>
 				</tr>
 				<c:forEach var="objProduct" items="${wishList}">
@@ -60,8 +60,8 @@
 								<span> ${objProduct.name} </span>
 							</div>
 						</td>
-						<td class="column-2">${objProduct.price}</td>
-						<td class="column-3">
+						<td class="column-4">${objProduct.price}</td>
+						<td class="column-2">
 							<div class="flex-t">
 								<span class="size-w-53 txt-m-104 cl6">
 									${objProduct.preview} </span>

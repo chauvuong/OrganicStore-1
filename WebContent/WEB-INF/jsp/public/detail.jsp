@@ -100,8 +100,8 @@
 					<span class="txt-m-117 cl9">$ ${objNews.price } </span>
 
 					<div class="flex-w flex-m p-t-30 p-b-27">
-					<%-- 	<c:choose>
-							<c:when test="${numberComment !=0 }"> --%>
+				 	<c:choose>
+							<c:when test="${numberComment !=0 }">
 
 
 								<span class="fs-16 cl11 lh-15 txt-center m-r-15"> <c:forEach
@@ -114,7 +114,7 @@
 
 								<span class="txt-s-115 cl6 p-b-3"> (${numberComment }
 									Review) </span>
-							<%-- </c:when>
+							 </c:when>
 							<c:otherwise>
 								<span class="fs-16 cl11 lh-15 txt-center m-r-15"> <i
 									class="fa fa-star m-rl-1"></i> <i class="fa fa-star m-rl-1"></i>
@@ -122,7 +122,7 @@
 									<i class="fa fa-star m-rl-1"></i>
 								</span>
 							</c:otherwise>
-						</c:choose> --%>
+						</c:choose> 
 
 
 					</div>

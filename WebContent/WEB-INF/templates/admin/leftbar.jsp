@@ -38,16 +38,16 @@
 					class="menu-arrow arrow_carrot-right"></span>
 			</a>
 				<ul class="sub">
-					<li><a class="" href="${pageContext.request.contextPath }/admin/user"> Quản Trị</a></li>
-					<li><a class="" href="${pageContext.request.contextPath }/admin/role">Cấp Bậc</a></li>
-					<li><a class="" href="${pageContext.request.contextPath }/admin/member"> Thành Viên</a></li>
-					<li><a class="" href="${pageContext.request.contextPath }/admin/cat">Danh Mục</a></li>
-					<li><a class="" href="${pageContext.request.contextPath }/admin/product">Sản Phẩm</a></li>
-					<li><a class="" href="${pageContext.request.contextPath }/admin/order">Đơn Hàng</a></li>
-					<li><a class="" href="${pageContext.request.contextPath }/admin/contact">Liên Hệ</a></li>
-					<li><a class="" href="${pageContext.request.contextPath }/admin/comment">Bình Luận</a></li>
-					<li><a class="" href="${pageContext.request.contextPath }/admin/payment">Hình Thức Thanh Toán</a></li>
-					<li><a class="" href="${pageContext.request.contextPath }/admin/discount">Mã Giảm Giá</a></li>
+					<li><a class="fa fa-user" href="${pageContext.request.contextPath }/admin/user">  Quản Trị</a></li>
+					<li><a class="fa fa-angry" href="${pageContext.request.contextPath }/admin/role"> Cấp Bậc</a></li>
+					<li><a class="fa fa-users" href="${pageContext.request.contextPath }/admin/member">  Thành Viên</a></li>
+					<li><a class="fa fa-list-ul" href="${pageContext.request.contextPath }/admin/cat"> Danh Mục</a></li>
+					<li><a class="fa fa-cubes" href="${pageContext.request.contextPath }/admin/product"> Sản Phẩm</a></li>
+					<li><a class="fa fa-shopping-cart" href="${pageContext.request.contextPath }/admin/order"> Đơn Hàng</a></li>
+					<li><a class="fa fa-list-ul" href="${pageContext.request.contextPath }/admin/contact"> Liên Hệ</a></li>
+					<li><a class="fa fa-comments" href="${pageContext.request.contextPath }/admin/comment"> Bình Luận</a></li>
+					<li><a class="fa fa-credit-card" href="${pageContext.request.contextPath }/admin/payment"> Hình Thức Thanh Toán</a></li>
+					<li><a class="fa fa-award" href="${pageContext.request.contextPath }/admin/discount"> Mã Giảm Giá</a></li>
 					
 					
 				</ul></li>

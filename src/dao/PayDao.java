@@ -44,6 +44,11 @@ public class PayDao {
 			return null;
 		}
 	}
+	
+	public int countItem() {
+		String sql = "SELECT COUNT(*) FROM pay ORDER BY id_pay DESC ";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public boolean checkItem(Payment objPay) {

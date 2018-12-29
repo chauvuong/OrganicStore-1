@@ -37,6 +37,11 @@ public class ContactDAO {
 		return (Contact) jdbcTemplate.queryForObject(query, new Object[] { id },
 				new BeanPropertyRowMapper(Contact.class));
 	}
+	
+	public int countItem() {
+		String sql = "SELECT COUNT(*) FROM contact ORDER BY id_contact DESC";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
 
 	
 	

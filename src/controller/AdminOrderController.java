@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.security.Principal;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,11 +27,9 @@ import util.SendMail;
 @Controller
 @RequestMapping(value = "admin/order")
 public class AdminOrderController {
-	
+
 	@Autowired
 	private Defines defines;
-	//@Autowired
-	//private ContactDAO contactDAO;
 
 	@Autowired
 	private ProductDao productDao;
@@ -42,16 +41,18 @@ public class AdminOrderController {
 	private OrderDao orderDao;
 
 	@ModelAttribute
-	public void addCommons(ModelMap modelMap) {
+	public void addCommons(ModelMap modelMap,HttpSession session) {
 		modelMap.addAttribute("defines", defines);
-//		modelMap.addAttribute("countChuadoc", contactDAO.count());
-		//modelMap.addAttribute("listOrder", orderDao.getItems());
+		session.setAttribute("NoActive", orderDao.countItemNoactive());
+		session.setAttribute("listOrderNoActive", orderDao.getItemsNoActive());
+
 	}
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String index(ModelMap modelMap, Principal principal,  @RequestParam(value = "page", defaultValue = "1") int page) {
+	public String index(ModelMap modelMap, Principal principal,
+			@RequestParam(value = "page", defaultValue = "1") int page) {
 		modelMap.addAttribute("user", userDao.getUser(principal.getName()));
-		
+
 		int current_page = 1;
 		int sum = Defines.ROW_COUNT;
 		int sumOrder = orderDao.countItem();
@@ -64,8 +65,7 @@ public class AdminOrderController {
 		modelMap.addAttribute("current_page", current_page);
 		int offset = (current_page - 1) * sum;
 		modelMap.addAttribute("listOrder", orderDao.getItemsAdmin(offset));
-		
-		
+
 		return "admin.order.index";
 	}
 
@@ -138,7 +138,5 @@ public class AdminOrderController {
 
 		}
 	}
-
-
 
 }

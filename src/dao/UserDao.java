@@ -109,5 +109,10 @@ public class UserDao {
 			return null;
 		}
 	}
+	
+	public int countItem() {
+		String sql = "SELECT COUNT(*) FROM admin ORDER BY id_user DESC";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
 
 }

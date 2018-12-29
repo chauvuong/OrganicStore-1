@@ -230,8 +230,11 @@
 </div>
 
 <!--===============================================================================================-->
-<script
+
+	
+	<script
 	src="${pageContext.request.contextPath }/templates/public/vendor/jquery/jquery-3.2.1.min.js"></script>
+	
 <!--===============================================================================================-->
 <script
 	src="${pageContext.request.contextPath }/templates/public/vendor/animsition/js/animsition.min.js"></script>

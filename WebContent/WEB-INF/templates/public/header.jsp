@@ -139,7 +139,7 @@
 												placeholder="Mật khẩu" value="">
 											</div>
 
-											<div class="flex-w flex-m p-t-15 p-b-10">
+											<div class="flex-w flex-m p-t-5 p-b-5">
 												<input type="submit" class="flex-c-m txt-s-105 cl0 bg10 size-a-39 hov-btn2 trans-04 p-rl-10 m-r-18">
 
 												<div class="flex-w flex-m p-tb-8">

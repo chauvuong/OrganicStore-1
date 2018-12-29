@@ -20,6 +20,13 @@ public class OrderDao {
 		String sql = "SELECT * FROM orders";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Order>(Order.class));
 	}
+	
+	public List<Order> getItemsNoActive() {
+		String sql = "SELECT * FROM orders where status = 0 LIMIT 4";
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Order>(Order.class));
+	}
+	
+	
 	public List<Order> getItemByMemId(int id) {
 		String sql = "SELECT * FROM orders WHERE id_member=? ORDER BY id_order DESC";
 		return jdbcTemplate.query(sql,new Object[] { id }, new BeanPropertyRowMapper<Order>(Order.class));
@@ -55,6 +62,12 @@ public class OrderDao {
 		String sql = "SELECT COUNT(*) FROM orders ORDER BY id_order DESC";
 		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
+	
+	public int countItemNoactive() {
+		String sql = "SELECT COUNT(*) FROM orders where status = 0 ORDER BY id_order DESC";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
+	
 
 	public List<Order> getItemsAdmin(int offset) {
 		String sql = "SELECT * FROM orders ORDER BY id_order DESC LIMIT ?,? ";

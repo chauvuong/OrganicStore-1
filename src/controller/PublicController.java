@@ -30,18 +30,15 @@ import dao.CatDao;
 import dao.CommentDao;
 import dao.ContactDAO;
 import dao.DetailOrderDao;
-import dao.DiscountDao;
 import dao.MemberDao;
 import dao.OrderDao;
 import dao.PayDao;
 import dao.ProductDao;
 import entity.Comment;
 import entity.Contact;
-import entity.Discount;
 import entity.Member;
 import entity.Order;
 import entity.Product;
-import entity.User;
 import util.SendMail;
 import util.SlugUtil;
 import util.StringUtil;
@@ -75,10 +72,6 @@ public class PublicController {
 	private CommentDao commentDao;
 	@Autowired
 	private OrderDao orderDao;
-
-	@Autowired
-	private DiscountDao discountDao;
-
 	@Autowired
 	private DetailOrderDao detailOrderDao;
 
@@ -111,7 +104,7 @@ public class PublicController {
 			}
 
 		}
-		return "redirect:/cart";
+		return "redirect:/gio-hang";
 	}
 
 	@RequestMapping(value = "/editsoluong", method = RequestMethod.POST)
@@ -209,14 +202,29 @@ public class PublicController {
 	@RequestMapping("thong-tin-cua-toi")
 	public String myaccount(HttpServletRequest request, HttpSession session) {
 		Member mem = (Member) session.getAttribute("userInfo");
-		List<Order> listOrder = orderDao.getItemByMemId(mem.getId_member());
-		request.setAttribute("orderList", listOrder);
-		return "public.shop.myaccount";
+		if (session.getAttribute("userInfo") == null) {
+			return "redirect:/";
+		} else {
+			List<Order> listOrder = orderDao.getItemByMemId(mem.getId_member());
+			request.setAttribute("orderList", listOrder);
+			return "public.shop.myaccount";
+		}
 	}
 
-	@RequestMapping(value = "thong-tin-cua-toi/chi-tiet-don-hang/{id}", method = RequestMethod.GET)
-	public String detailOrder(@PathVariable("id") int id, ModelMap modelMap) {
-		modelMap.addAttribute("listDetail", detailOrderDao.getItems(id));
+	@RequestMapping(value = "/thong-tin-cua-toi/chi-tiet-don-hang/{id}/{uid}", method = RequestMethod.GET)
+	public String detailOrder(@PathVariable("id") int id, @PathVariable("uid") int uid, ModelMap modelMap,
+			HttpSession session) {
+		Member member = (Member) session.getAttribute("userInfo");
+
+		if (session.getAttribute("userInfo") == null) {
+			return "redirect:/";
+		} else {
+			if (uid != member.getId_member()) {
+				return "public.shop.404";
+			}
+			modelMap.addAttribute("listDetail", detailOrderDao.getItemsPublic(id, uid));
+
+		}
 		return "public.shop.myorder";
 	}
 
@@ -226,25 +234,25 @@ public class PublicController {
 		Member mem = memberDao.getItem(id);
 		if (mem == null) {
 			ra.addFlashAttribute("msg", "ID Không Tồn Tại");
-			return "redirect:/myaccount";
+			return "redirect:/thong-tin-cua-toi";
 		}
 		mem.setFullname(request.getParameter("fullname"));
-		mem.setEmail(request.getParameter("email"));
+		//mem.setEmail(request.getParameter("email"));
 		mem.setAddress(request.getParameter("address"));
 		mem.setPhone(request.getParameter("phone"));
 		memberDao.editItem(mem);
 		session.setAttribute("userInfo", mem);
 		ra.addFlashAttribute("msg", "Cập Nhật Thông Tin Thành Công!");
-		return "redirect:/myaccount";
+		return "redirect:/thong-tin-cua-toi";
 	}
 
-	@RequestMapping(value = "thay-doi-mat-khau/{id}", method = RequestMethod.POST)
+	@RequestMapping(value = "/thay-doi-mat-khau/{id}", method = RequestMethod.POST)
 	public String passchange(@PathVariable("id") int id, ModelMap modelMap, HttpSession session,
 			HttpServletRequest request, RedirectAttributes ra, HttpServletResponse response) throws IOException {
 		Member mem = memberDao.getItem(id);
 		if (mem == null) {
 			ra.addFlashAttribute("msg", "ID Không Tồn Tại");
-			return "redirect:/myaccount";
+			return "redirect:/thong-tin-cua-toi";
 		}
 		String cp = request.getParameter("current-pw");
 		if (mem.getPassword().equals(stringUtil.md5(cp))) {
@@ -253,11 +261,11 @@ public class PublicController {
 			memberDao.editItem(mem);
 			// System.out.println("Thành công!");
 			ra.addFlashAttribute("msg", "Cập Nhật Mật Khẩu Thành Công!");
-			return "redirect:/myaccount";
+			return "redirect:/thong-tin-cua-toi";
 		} else {
 			// System.out.println("không thành công!");
 			ra.addFlashAttribute("msg", "Cập Nhật Thất Bại!");
-			return "redirect:/myaccount";
+			return "redirect:/thong-tin-cua-toi";
 		}
 	}
 
@@ -288,10 +296,10 @@ public class PublicController {
 
 	// LOGIN
 
-/*	@RequestMapping(value = "/login-member", method = RequestMethod.GET)
-	public String login() {
-		return "redirect:/";
-	}*/
+	/*
+	 * @RequestMapping(value = "/login-member", method = RequestMethod.GET) public
+	 * String login() { return "redirect:/"; }
+	 */
 
 	@RequestMapping(value = "/login-member", method = RequestMethod.POST)
 	public String checklogin(@RequestParam("email") String email, @RequestParam("password") String password,
@@ -314,9 +322,14 @@ public class PublicController {
 		return "redirect:/";
 	}
 
-	@RequestMapping("dang-ky-tai-khoan")
-	public String register() {
-		return "public.shop.register";
+	@RequestMapping("/dang-ky-tai-khoan")
+	public String register(HttpSession session) {
+
+		if (session.getAttribute("userInfo") != null) {
+			return "redirect:/";
+		} else {
+			return "public.shop.register";
+		}
 	}
 
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
@@ -326,15 +339,15 @@ public class PublicController {
 				// gá»­i mail
 				sendMail.sendMail(objUser.getEmail(), "YOU HAVE REGISTERED SUCCESS",
 						"\nYOU HAVE REGISTERED SUCCESS" + "\nEmail: " + objUser.getEmail() + "" + "\nPassword: "
-								+ objUser.getPassword() + "" + "\n SIGN IN TO BUY");
+								+ objUser.getPassword() + "\n SIGN IN TO BUY");
 				ra.addFlashAttribute("msg",
 						"Đăng Ký Thành Công ! Tiếp Tục Mua Hàng Bằng Cách Đăng Nhập Tài Khoản ! Xin Cảm Ơn !");
-				return "redirect:/register";
+				return "redirect:/dang-ky-tai-khoan";
 			} else {
 				ra.addFlashAttribute("msg", "Đăng Ký Không Thành Công...Xin Kiểm Tra Lại !");
 
 			}
-		return "redirect:/register?msg=add";
+		return "redirect:/dang-ky-tai-khoan?msg=add";
 
 	}
 
@@ -365,8 +378,12 @@ public class PublicController {
 	// THANH TOÁN
 
 	@RequestMapping(value = "/xac-nhan-don-hang", method = RequestMethod.GET)
-	public String cofirm() {
-		return "public.shop.confirm";
+	public String cofirm(HttpSession session) {
+		if (session.getAttribute("listCart") == null) {
+			return "redirect:/";
+		} else {
+			return "public.shop.confirm";
+		}
 	}
 
 	@RequestMapping(value = "/xac-nhan-don-hang", method = RequestMethod.POST)
@@ -387,8 +404,8 @@ public class PublicController {
 
 			Order setInfo = (Order) session.getAttribute("setInfo");
 			Member member = (Member) session.getAttribute("userInfo");
-			//setInfo.setId_member(member.getId_member());
-			
+			// setInfo.setId_member(member.getId_member());
+
 			Date today = new Date(System.currentTimeMillis());
 			SimpleDateFormat timeFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 			String time = timeFormat.format(today.getTime());
@@ -406,7 +423,8 @@ public class PublicController {
 				modelMap.addAttribute("tongtien", tongtien);
 				modelMap.addAttribute("id_order", setInfo.getId_order());
 				modelMap.addAttribute("note", setInfo.getNote());
-				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER" + "\n THANK YOU");
+				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER" + "\nPAY: " + setInfo.getPay()
+						+ "\r\n" + "\nTOTAL MONEY :" + tongtien + "\n THANK YOU");
 				listCart.clear();
 				session.removeAttribute("setInfo");
 				session.removeAttribute("listCart");
@@ -415,14 +433,15 @@ public class PublicController {
 				// thanh toán paypal
 				modelMap.addAttribute("tongtien", tongtien);
 				modelMap.addAttribute("id_donhang", setInfo.getId_order());
-				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER\n" + "\n Hình Thức Thanh Toán \n"
-						+ setInfo.getPay() + "\n Tổng Tiền \n" + tongtien + "\n THANK YOU");
+				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER\n" + "\nPAY: " + setInfo.getPay()
+						+ "\r\n" + "\nTOTAL MONEY" + tongtien + "\n THANK YOU");
 				listCart.clear();
 				session.removeAttribute("setInfo");
 				session.removeAttribute("listCart");
 				return "public.shop.paysuccess3";
 			} else {
-				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER" + "\n THANK YOU");
+				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER" + "\nPAY: " + setInfo.getPay()
+						+ "\r\n" + "\nTOTAL MONEY" + tongtien + "\n THANK YOU");
 				listCart.clear();
 				session.removeAttribute("setInfo");
 				session.removeAttribute("listCart");
@@ -432,9 +451,7 @@ public class PublicController {
 			return "public.shop.confirm";
 		}
 	}
-	
-	
-	
+
 	@RequestMapping(value = "/hoan-tat-thanh-toan", method = RequestMethod.POST)
 	public String payUser(HttpSession session, ModelMap modelMap, HttpServletRequest request) {
 		if (session.getAttribute("listCart") != null) {
@@ -442,7 +459,7 @@ public class PublicController {
 			Order setInfo = (Order) session.getAttribute("setInfo");
 			Member member = (Member) session.getAttribute("userInfo");
 			setInfo.setId_member(member.getId_member());
-			
+
 			Date today = new Date(System.currentTimeMillis());
 			SimpleDateFormat timeFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 			String time = timeFormat.format(today.getTime());
@@ -460,7 +477,8 @@ public class PublicController {
 				modelMap.addAttribute("tongtien", tongtien);
 				modelMap.addAttribute("id_order", setInfo.getId_order());
 				modelMap.addAttribute("note", setInfo.getNote());
-				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER" + "\n THANK YOU");
+				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER:" + "\nPAY: " + setInfo.getPay()
+						+ "\r\n" + "\nTOTAL MONEY" + tongtien + "\n THANK YOU");
 				listCart.clear();
 				session.removeAttribute("setInfo");
 				session.removeAttribute("listCart");
@@ -469,14 +487,15 @@ public class PublicController {
 				// thanh toán paypal
 				modelMap.addAttribute("tongtien", tongtien);
 				modelMap.addAttribute("id_donhang", setInfo.getId_order());
-				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER\n" + "\n Hình Thức Thanh Toán \n"
-						+ setInfo.getPay() + "\n Tổng Tiền \n" + tongtien + "\n THANK YOU");
+				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER\n" + "\nPAY: " + setInfo.getPay()
+						+ "\r\n" + "\nTOTAL MONEY" + tongtien + "\n THANK YOU");
 				listCart.clear();
 				session.removeAttribute("setInfo");
 				session.removeAttribute("listCart");
 				return "public.shop.paysuccess3";
 			} else {
-				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER" + "\n THANK YOU");
+				sendMail.sendMail(setInfo.getEmail(), "ORDER SUCCESS", "\nYOUR ORDER" + "\nPAY: " + setInfo.getPay()
+						+ "\r\n" + "/nTOTAL MONEY" + tongtien + "\n THANK YOU");
 				listCart.clear();
 				session.removeAttribute("setInfo");
 				session.removeAttribute("listCart");
@@ -501,7 +520,21 @@ public class PublicController {
 		if (rating == 0) {
 			rating = 5;
 		}
+		System.out.println("rating : " + rating);
 		Timestamp dateCreate = new Timestamp(new Date().getTime());
+		int itemrating = productDao.getItemsRating(idNews);
+		int sumrating = productDao.sumRating(idNews);
+		float tu = (itemrating * sumrating) + rating;
+		float mau = sumrating + 1;
+		System.out.println("sumrating : " + sumrating);
+		System.out.println("ahahas : " + Math.round(4.2));
+		System.out.println("tu : " + tu);
+		System.out.println("mau : " + mau);
+		System.out.println("ahahas1 : " + (float) (tu / mau));
+		int newrating = Math.round((float) (tu / mau));
+
+		System.out.println("newrating : " + newrating);
+		productDao.editRating(idNews, newrating);
 		Comment item = new Comment(0, "", name, email, content, rating, dateCreate, idNews);
 		commentDao.addItem(item);
 		ArrayList<Comment> listComment = (ArrayList<Comment>) commentDao.getListCommenPublic(idNews);
@@ -545,8 +578,12 @@ public class PublicController {
 	}
 
 	@RequestMapping("san-pham-yeu-thich")
-	public String wishlist(HttpServletRequest request) {
-		return "public.shop.wishlist";
+	public String wishlist(HttpServletRequest request, HttpSession session) {
+		if (session.getAttribute("userInfo") == null) {
+			return "redirect:/";
+		} else {
+			return "public.shop.wishlist";
+		}
 	}
 
 	// QUAN
@@ -602,9 +639,6 @@ public class PublicController {
 		}
 		out.print(s);
 	}
-	
-	
-
 
 	@RequestMapping(value = "/dellAll", method = RequestMethod.POST)
 	public void dellAll(ModelMap modelMap, HttpSession session, HttpServletRequest request,
@@ -780,7 +814,7 @@ public class PublicController {
 					+ "										</div>\r\n" + "</div>\r\n"
 					+ "								</div>";
 		}
-		s += "						</div>";
+		s += "</div>";
 		out.print(s);
 	}
 	// QUAN

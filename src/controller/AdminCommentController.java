@@ -42,8 +42,10 @@ public class AdminCommentController {
 	private Defines defines;
 
 	@RequestMapping("")
-	public String index(ModelMap modelMap) {
+	public String index(ModelMap modelMap,HttpSession session) {
 		modelMap.addAttribute("listComment", commentDao.getItemsAdmin());
+		session.setAttribute("listCommentNews", commentDao.getItemsCommentNews());
+		session.setAttribute("sumComment", commentDao.countItem());
 		return "admin.comment.index";
 	}
 
@@ -63,49 +65,39 @@ public class AdminCommentController {
 		return "redirect:/admin/comment";
 	}
 
-/*	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public void comment(ModelMap modelMap, HttpSession session, HttpServletRequest request,
-			HttpServletResponse response) throws IOException {
-		PrintWriter out = response.getWriter();
-		int idNews = Integer.parseInt(request.getParameter("adid"));
-		String name = request.getParameter("aname"); // lấy từ tên key a
-		String email = request.getParameter("aemail");
-		String content = request.getParameter("acontent");
-		int rating = Integer.parseInt(request.getParameter("arating"));
-		if(rating==0) {
-			rating = 5;
-		}
-		Timestamp dateCreate = new Timestamp(new Date().getTime());
-		Comment item = new Comment(0, "", name, email, content, rating, dateCreate, idNews);
-		commentDao.addItem(item);
-		ArrayList<Comment> listComment = (ArrayList<Comment>) commentDao.getListCommenPublic(idNews);
-		String s ="";
-		for (Comment objItem : listComment) {
-				s +="<div><div class=\"flex-w flex-sb-t bo-b-1 bocl15 p-b-37\">"
-					+ "<div class=\"wrap-pic-w size-w-56\">"
-					+ "<img src='"+request.getContextPath()+"/templates/public/images/avatar-00.gif' width='100px' height='100px' alt='AVATAR' />"
-					+ "</div>"
-					+ "<div class=\"size-w-57 p-t-2\">"
-					+ "	<div class=\"flex-w flex-sb-m p-b-8\">"
-					+ "<div class=\"flex-w flex-b m-r-20 p-tb-5\">"
-					+ "<span class=\"txt-m-103 cl6 m-r-20\">"+ objItem.getName() + "</span>"
-					+ "<span class=\"txt-s-120 cl9\">" + objItem.getDate_create()+ " </span>"
-					+ "</div>"
-					+ "<span class=\"fs-16 cl11 lh-15 txt-center m-r-15 p-tb-5\">";
-					for(int i =1; i <=objItem.getRating();i++) {
-					s+="	<i class=\"fa fa-star m-rl-1\"} ></i> ";
-					}
-					for(int i =1; i <=5-objItem.getRating();i++) {
-						s+="<i class=\"fa fa-star-o m-rl-1\"} ></i>";
-					}
-					s+="</span>"
-					+ "</div>"
-					+"<p class=\"txt-s-101 cl6\">"+ objItem.getContent() + "</p>" 
-					+ "</div></div>";
-					
-		}
-		out.print(s);
-
-	}
-*/
+	/*
+	 * @RequestMapping(value = "/add", method = RequestMethod.POST) public void
+	 * comment(ModelMap modelMap, HttpSession session, HttpServletRequest request,
+	 * HttpServletResponse response) throws IOException { PrintWriter out =
+	 * response.getWriter(); int idNews =
+	 * Integer.parseInt(request.getParameter("adid")); String name =
+	 * request.getParameter("aname"); // lấy từ tên key a String email =
+	 * request.getParameter("aemail"); String content =
+	 * request.getParameter("acontent"); int rating =
+	 * Integer.parseInt(request.getParameter("arating")); if(rating==0) { rating =
+	 * 5; } Timestamp dateCreate = new Timestamp(new Date().getTime()); Comment item
+	 * = new Comment(0, "", name, email, content, rating, dateCreate, idNews);
+	 * commentDao.addItem(item); ArrayList<Comment> listComment =
+	 * (ArrayList<Comment>) commentDao.getListCommenPublic(idNews); String s ="";
+	 * for (Comment objItem : listComment) { s
+	 * +="<div><div class=\"flex-w flex-sb-t bo-b-1 bocl15 p-b-37\">" +
+	 * "<div class=\"wrap-pic-w size-w-56\">" +
+	 * "<img src='"+request.getContextPath()
+	 * +"/templates/public/images/avatar-00.gif' width='100px' height='100px' alt='AVATAR' />"
+	 * + "</div>" + "<div class=\"size-w-57 p-t-2\">" +
+	 * "	<div class=\"flex-w flex-sb-m p-b-8\">" +
+	 * "<div class=\"flex-w flex-b m-r-20 p-tb-5\">" +
+	 * "<span class=\"txt-m-103 cl6 m-r-20\">"+ objItem.getName() + "</span>" +
+	 * "<span class=\"txt-s-120 cl9\">" + objItem.getDate_create()+ " </span>" +
+	 * "</div>" + "<span class=\"fs-16 cl11 lh-15 txt-center m-r-15 p-tb-5\">";
+	 * for(int i =1; i <=objItem.getRating();i++) {
+	 * s+="	<i class=\"fa fa-star m-rl-1\"} ></i> "; } for(int i =1; i
+	 * <=5-objItem.getRating();i++) { s+="<i class=\"fa fa-star-o m-rl-1\"} ></i>";
+	 * } s+="</span>" + "</div>" +"<p class=\"txt-s-101 cl6\">"+
+	 * objItem.getContent() + "</p>" + "</div></div>";
+	 * 
+	 * } out.print(s);
+	 * 
+	 * }
+	 */
 }

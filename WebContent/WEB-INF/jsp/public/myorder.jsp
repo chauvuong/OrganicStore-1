@@ -42,7 +42,7 @@
 							data-toggle="tab" href="#orders" role="tab">Chi Tiết Đơn Hàng</a></li>
 							
 						<li class="nav-item p-b-16"><a class="nav-link"
-							href="${pageContext.request.contextPath }/myaccount">Đơn Đặt Hàng
+							href="${pageContext.request.contextPath }/thong-tin-cua-toi">Đơn Đặt Hàng
 								</a></li>
 
 						<!-- <li class="nav-item p-b-16">
@@ -67,7 +67,7 @@
 							role="tabpanel">
 
 							<form
-								action="${pageContext.request.contextPath }/medit/${userInfo.id_member}"
+								action="${pageContext.request.contextPath }/thay-doi-thong-tin-ca-nhan/${userInfo.id_member}"
 								method="POST" role="form">
 								<legend>Thông Tin</legend>
 								<div class="form-group">
@@ -190,7 +190,7 @@
 						
 						<div class="tab-pane fade" id="changepassword" role="tabpanel">
 							<form
-								action="${pageContext.request.contextPath }/passchange/${userInfo.id_member}"
+								action="${pageContext.request.contextPath }/thay-doi-mat-khau/${userInfo.id_member}"
 								method="POST">
 								<div class="row">
 									<h5 class="txt-m-109 cl3 p-rl-15 p-t-10 p-b-17">Thay đổi
