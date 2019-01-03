@@ -127,7 +127,8 @@
 										</div>
 										<div class="cart-header menu-click-child trans-04">
 											<marquee width="100%">Chào ${userInfo.fullname }</marquee>
-											<a href="${pageContext.request.contextPath }/san-pham-yeu-thich"
+											<a
+												href="${pageContext.request.contextPath }/san-pham-yeu-thich"
 												class="txt-s-101 cl9 hov-cl10 trans-04">Sản Phẩm Yêu
 												Thích</a><br /> <a
 												href="${pageContext.request.contextPath }/thong-tin-cua-toi"

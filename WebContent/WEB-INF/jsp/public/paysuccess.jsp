@@ -23,6 +23,7 @@
 </center>
 <br />
 <center>
-	<h4 style="color: green; font-family: cursive;">Đơn Hàng Của Bạn Đã Được Đặt Thành Công!
-		Chúng Tôi Sẽ Liên Lạc Trong Thời Gian Sớm Nhất !</h4>
+	<h4 style="color: green; font-family: cursive;">Đơn Hàng Của Bạn
+		Đã Được Đặt Thành Công! Chúng Tôi Sẽ Liên Lạc Trong Thời Gian Sớm Nhất
+		!</h4>
 </center>

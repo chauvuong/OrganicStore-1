@@ -12,13 +12,13 @@
 					<li><i class="fa fa-home"></i><a
 						href="${pageContext.request.contextPath}/admin">Home</a></li>
 					<li><i class="fa fa-laptop"></i><a
-						href="${pageContext.request.contextPath }/admin/order">Đơn Hàng
-							</a></li>
+						href="${pageContext.request.contextPath }/admin/order">Đơn
+							Hàng </a></li>
 				</ol>
 			</div>
 		</div>
 		<h4>
-			<p style="color: green;font-family: cursive;">${msg}</p>
+			<p style="color: green; font-family: cursive;">${msg}</p>
 		</h4>
 		<div class="row">
 			<div class="col-lg-12">
@@ -43,8 +43,10 @@
 								<th><i class="icon_cogs"></i> Chức Năng</th>
 							</tr>
 
-							<form id="form-order" action="${pageContext.request.contextPath }/admin/order/dels" method="post">
-									<c:forEach var="objOrder" items="${listOrder}">
+							<form id="form-order"
+								action="${pageContext.request.contextPath }/admin/order/dels"
+								method="post">
+								<c:forEach var="objOrder" items="${listOrder}">
 									<tr>
 										<td><input type="checkbox" name="selected"
 											value="${objOrder.id_order }" /></td>
@@ -65,8 +67,8 @@
 														id="html${objOrder.id_order }">
 														<a href="javascript:void(0)"
 															onclick="return changes${objOrder.id_order}()"><img
-															id="img${objOrder.id_order}" width="15px"
-															height="15px" src="${URLtick }" alt="tick" /></a>
+															id="img${objOrder.id_order}" width="15px" height="15px"
+															src="${URLtick }" alt="tick" /></a>
 													</div>
 												</c:when>
 												<c:otherwise>
@@ -74,23 +76,22 @@
 														id="html${objOrder.id_order }">
 														<a href="javascript:void(0)"
 															onclick="return changes${objOrder.id_order}()"><img
-															id="img${objOrder.id_order}" width="15px"
-															height="15px" src="${URLlock }" alt="lock" /></a>
+															id="img${objOrder.id_order}" width="15px" height="15px"
+															src="${URLlock }" alt="lock" /></a>
 													</div>
 												</c:otherwise>
 											</c:choose></td>
-											
+
 										<td>
 											<div class="btn-group">
 												<a class="btn btn-primary"
 													href="${pageContext.request.contextPath }/admin/order/detail/${objOrder.id_order }"><i
 													class="glyphicon glyphicon-pushpin"></i></a>
 											</div>
-										</td>	
+										</td>
 										<td>
 											<div class="btn-group">
-												<a
-													class="btn btn-danger"
+												<a class="btn btn-danger"
 													href="${pageContext.request.contextPath }/admin/order/del/${objOrder.id_order }"><i
 													class="icon_close_alt2"></i></a>
 											</div>
@@ -125,10 +126,10 @@
 									}
 									</script>
 
-									</c:forEach>
-									</form>
-		</tbody>
-			</table>
+								</c:forEach>
+							</form>
+						</tbody>
+					</table>
 					<div class="text-center">
 						<ul class="pagination">
 							<c:choose>
@@ -178,10 +179,12 @@
 									<c:forEach var="i" begin="${num }" end="${loop}">
 										<c:choose>
 											<c:when test="${pages == i }">
-												<li><a style="background: #FFCCFF" style="border-radius"   >${i}</a></li>
+												<li><a style="background: #FFCCFF"
+													style="border-radius">${i}</a></li>
 											</c:when>
 											<c:otherwise>
-												<li><a href="${pageContext.request.contextPath }/admin/order?page=${i}">${i }</a></li>
+												<li><a
+													href="${pageContext.request.contextPath }/admin/order?page=${i}">${i }</a></li>
 
 											</c:otherwise>
 										</c:choose>

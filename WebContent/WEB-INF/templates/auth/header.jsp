@@ -5,25 +5,38 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <link rel="shortcut icon" href="${pageContext.request.contextPath }/templates/admin/img/favicon.png">
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath }/templates/admin/img/favicon.png">
 
-  <title>Organic Store</title>
+<title>Organic Store</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="${pageContext.request.contextPath }/templates/admin/css/bootstrap.min.css" rel="stylesheet">
-  <!-- bootstrap theme -->
-  <link href="${pageContext.request.contextPath }/templates/admin/css/bootstrap-theme.css" rel="stylesheet">
-  <!--external css-->
-  <!-- font icon -->
-  <link href="${pageContext.request.contextPath }/templates/admin/css/elegant-icons-style.css" rel="stylesheet" />
-  <link href="${pageContext.request.contextPath }/templates/admin/css/font-awesome.css" rel="stylesheet" />
-  <!-- Custom styles -->
-  <link href="${pageContext.request.contextPath }/templates/admin/css/style.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath }/templates/admin/css/style-responsive.css" rel="stylesheet" />
+<!-- Bootstrap CSS -->
+<link
+	href="${pageContext.request.contextPath }/templates/admin/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- bootstrap theme -->
+<link
+	href="${pageContext.request.contextPath }/templates/admin/css/bootstrap-theme.css"
+	rel="stylesheet">
+<!--external css-->
+<!-- font icon -->
+<link
+	href="${pageContext.request.contextPath }/templates/admin/css/elegant-icons-style.css"
+	rel="stylesheet" />
+<link
+	href="${pageContext.request.contextPath }/templates/admin/css/font-awesome.css"
+	rel="stylesheet" />
+<!-- Custom styles -->
+<link
+	href="${pageContext.request.contextPath }/templates/admin/css/style.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath }/templates/admin/css/style-responsive.css"
+	rel="stylesheet" />
 
-  
+
 </head>
 
 <body class="login-img3-body">

@@ -40,7 +40,7 @@
 								<a class="nav-link" data-toggle="tab" href="#dashboard" role="tab">Thống Kê</a>
 							</li>
  -->
-						
+
 
 						<!-- <li class="nav-item p-b-16">
 								<a class="nav-link" data-toggle="tab" href="#addresses" role="tab">Địa Chỉ</a>
@@ -60,77 +60,83 @@
 					<!-- Tab panes -->
 					<div class="tab-content p-l-70 p-l-0-lg">
 						<!--!Detail- -->
-						<div class="tab-pane fade  show active" id="orders" role="tabpanel">
-							
-							<c:choose>
-							<c:when test="${empty orderList }">
-							<div
-								class="bo-all-1 bocl15 flex-w flex-sb-m p-rl-30 p-tb-10 p-rl-15-ssm">
-								<div class="flex-t p-tb-10 m-r-30">
-									<img class="m-t-6 m-r-10"
-										src="${pageContext.request.contextPath }/templates/public/images/icons/icon-list.png"
-										alt="IMG"> <span class="size-w-53 txt-s-101 cl6">
-										Chưa có sản phẩm nào được order. </span>
-								</div>
-
-								<a href="${pageContext.request.contextPath }/"
-									class="flex-c-m txt-s-105 cl0 bg10 size-a-42 hov-btn2 trans-04 p-rl-10 m-tb-8">
-									Mua ngay </a>
-							</div>
-							
-							</c:when>
-							<c:otherwise>
-								<table class="table-shopping-cart">
-								<tr class="table_head bg12">
-									<th class="column-3 p-l-30">Ngày Đặt Hàng</th>
-									<th class="column-1">Thanh Toán</th>
-									<th class="column-3">Trạng Thái</th>
-									<th class="column-2">Chi Tiết</th>
-								</tr>
-								<c:forEach var="objOder" items="${orderList}">
-									<tr class="table_row">
-										<td class="column-3">
-											<div class="flex-w flex-m">
-												<div class="p-l-20">
-													<span>${objOder.date_create}</span>
-												</div>
-											</div>
-										</td>
-										<td class="column-1">${objOder.pay}</td>
-										<td class="column-3">
-											<div class="flex-t">
-											<c:choose>
-										   		 <c:when test="${objOder.status==1}">
-													<img class="m-t-4 m-r-8" src="${pageContext.request.contextPath }/templates/public/images/icons/icon-list3.png" alt="IMG">
-										   			<span class="size-w-53 txt-m-104 cl6">Đã xử lý </span>
-										   		 </c:when>    
-										    	<c:otherwise>
-										    		<img class="m-t-4 m-r-8" src="${pageContext.request.contextPath }/templates/admin/images/deactive.gif" alt="IMG">
-										    		<span class="size-w-53 txt-m-104 cl6">Đang chờ xử lý</span>
-										    	</c:otherwise>
-											</c:choose>
-											</div>
-										</td>
-										<td class="column-2">
-											<div class="flex-w flex-sb-m">
-												<a href="${pageContext.request.contextPath }/thong-tin-cua-toi/chi-tiet-don-hang/${objOder.id_order }/${userInfo.id_member}" 
-													class="flex-c-m txt-s-103 cl6 size-a-2 how-btn1 bo-all-1 bocl11 hov-btn1 trans-04">
-													Xem <span class="lnr lnr-chevron-right m-l-1"></span> <span
-													class="lnr lnr-chevron-right"></span>
-												</a>
-											</div>
-										</td>
-									</tr>
-								</c:forEach>
-							</table>
-							</c:otherwise>
-							
-							</c:choose>
-						
-						</div>
-						
-						<div class="tab-pane fade" id="accountdetail"
+						<div class="tab-pane fade  show active" id="orders"
 							role="tabpanel">
+
+							<c:choose>
+								<c:when test="${empty orderList }">
+									<div
+										class="bo-all-1 bocl15 flex-w flex-sb-m p-rl-30 p-tb-10 p-rl-15-ssm">
+										<div class="flex-t p-tb-10 m-r-30">
+											<img class="m-t-6 m-r-10"
+												src="${pageContext.request.contextPath }/templates/public/images/icons/icon-list.png"
+												alt="IMG"> <span class="size-w-53 txt-s-101 cl6">
+												Chưa có sản phẩm nào được order. </span>
+										</div>
+
+										<a href="${pageContext.request.contextPath }/"
+											class="flex-c-m txt-s-105 cl0 bg10 size-a-42 hov-btn2 trans-04 p-rl-10 m-tb-8">
+											Mua ngay </a>
+									</div>
+
+								</c:when>
+								<c:otherwise>
+									<table class="table-shopping-cart">
+										<tr class="table_head bg12">
+											<th class="column-3 p-l-30">Ngày Đặt Hàng</th>
+											<th class="column-1">Thanh Toán</th>
+											<th class="column-3">Trạng Thái</th>
+											<th class="column-2">Chi Tiết</th>
+										</tr>
+										<c:forEach var="objOder" items="${orderList}">
+											<tr class="table_row">
+												<td class="column-3">
+													<div class="flex-w flex-m">
+														<div class="p-l-20">
+															<span>${objOder.date_create}</span>
+														</div>
+													</div>
+												</td>
+												<td class="column-1">${objOder.pay}</td>
+												<td class="column-3">
+													<div class="flex-t">
+														<c:choose>
+															<c:when test="${objOder.status==1}">
+																<img class="m-t-4 m-r-8"
+																	src="${pageContext.request.contextPath }/templates/public/images/icons/icon-list3.png"
+																	alt="IMG">
+																<span class="size-w-53 txt-m-104 cl6">Đã xử lý </span>
+															</c:when>
+															<c:otherwise>
+																<img class="m-t-4 m-r-8"
+																	src="${pageContext.request.contextPath }/templates/admin/images/deactive.gif"
+																	alt="IMG">
+																<span class="size-w-53 txt-m-104 cl6">Đang chờ xử
+																	lý</span>
+															</c:otherwise>
+														</c:choose>
+													</div>
+												</td>
+												<td class="column-2">
+													<div class="flex-w flex-sb-m">
+														<a
+															href="${pageContext.request.contextPath }/thong-tin-cua-toi/chi-tiet-don-hang/${objOder.id_order }/${userInfo.id_member}"
+															class="flex-c-m txt-s-103 cl6 size-a-2 how-btn1 bo-all-1 bocl11 hov-btn1 trans-04">
+															Xem <span class="lnr lnr-chevron-right m-l-1"></span> <span
+															class="lnr lnr-chevron-right"></span>
+														</a>
+													</div>
+												</td>
+											</tr>
+										</c:forEach>
+									</table>
+								</c:otherwise>
+
+							</c:choose>
+
+						</div>
+
+						<div class="tab-pane fade" id="accountdetail" role="tabpanel">
 
 							<form
 								action="${pageContext.request.contextPath }/thay-doi-thong-tin-ca-nhan/${userInfo.id_member}"
@@ -209,7 +215,7 @@
 								</p>
 							</div> -->
 						<!-- - -->
-						
+
 
 						<!-- - -->
 						<!-- 	<div class="tab-pane fade" id="addresses" role="tabpanel">

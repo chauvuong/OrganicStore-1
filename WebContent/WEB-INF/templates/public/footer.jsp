@@ -76,9 +76,21 @@
 							src="${pageContext.request.contextPath }/templates/public/images/icons/icon-phone.png"
 							alt="ICON-MAIL">
 					</span> <span class="size-w-12 p-t-1"> 0236 3777 999 </span></li>
-					
-					
-					<div class="fb-page" data-href="https://www.facebook.com/Organic-Store-269100330436961/?modal=admin_todo_tour" data-tabs="timeline" data-width="320" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Organic-Store-269100330436961/?modal=admin_todo_tour" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Organic-Store-269100330436961/?modal=admin_todo_tour">Organic Store</a></blockquote></div>
+
+
+					<div class="fb-page"
+						data-href="https://www.facebook.com/Organic-Store-269100330436961/?modal=admin_todo_tour"
+						data-tabs="timeline" data-width="320" data-height="70"
+						data-small-header="false" data-adapt-container-width="true"
+						data-hide-cover="false" data-show-facepile="false">
+						<blockquote
+							cite="https://www.facebook.com/Organic-Store-269100330436961/?modal=admin_todo_tour"
+							class="fb-xfbml-parse-ignore">
+							<a
+								href="https://www.facebook.com/Organic-Store-269100330436961/?modal=admin_todo_tour">Organic
+								Store</a>
+						</blockquote>
+					</div>
 				</ul>
 			</div>
 
@@ -231,10 +243,10 @@
 
 <!--===============================================================================================-->
 
-	
-	<script
+
+<script
 	src="${pageContext.request.contextPath }/templates/public/vendor/jquery/jquery-3.2.1.min.js"></script>
-	
+
 <!--===============================================================================================-->
 <script
 	src="${pageContext.request.contextPath }/templates/public/vendor/animsition/js/animsition.min.js"></script>

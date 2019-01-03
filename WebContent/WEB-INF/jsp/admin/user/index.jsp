@@ -17,17 +17,16 @@
 				</ol>
 			</div>
 		</div>
-<h4>
-	<p style="color: green;font-family: cursive;">${msg}</p>
-</h4>	
+		<h4>
+			<p style="color: green; font-family: cursive;">${msg}</p>
+		</h4>
 		<div class="row">
 			<div class="col-lg-12">
 				<section class="panel">
 
 					<a href="${pageContext.request.contextPath }/admin/user/add"
 						class="btn btn-success"><strong
-						class="glyphicon glyphicon-plus"></strong><span
-						class="bt_green_r"></span></a>
+						class="glyphicon glyphicon-plus"></strong><span class="bt_green_r"></span></a>
 					<table class="table table-striped table-advance table-hover">
 						<tbody>
 							<tr>
@@ -47,7 +46,7 @@
 									<td>${objUser.fullname }</td>
 									<td>${objUser.rname }</td>
 									<td>${objUser.phone }</td>
-								<%-- 	<td><c:set
+									<%-- 	<td><c:set
 											value="${pageContext.request.contextPath}/templates/admin/images/deactive.gif"
 											var="URLlock">
 										</c:set> <c:set
@@ -86,7 +85,7 @@
 									</td>
 								</tr>
 
-							<!-- 	<script>
+								<!-- 	<script>
 					function changes${objUser.id_user}(){
 					var img = $('#img${objUser.id_user}').attr('src')
 					var id = ${objUser.id_user};

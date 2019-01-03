@@ -4,7 +4,8 @@
 	<div id="sidebar" class="nav-collapse ">
 		<!-- sidebar menu start-->
 		<ul class="sidebar-menu">
-			<li class="active"><a class="" href="${pageContext.request.contextPath }/admin"> <i
+			<li class="active"><a class=""
+				href="${pageContext.request.contextPath }/admin"> <i
 					class="icon_house_alt"></i> <span>Thống Kê</span>
 			</a></li>
 			<!-- <li class="sub-menu"><a href="javascript:;" class=""> <i
@@ -38,20 +39,38 @@
 					class="menu-arrow arrow_carrot-right"></span>
 			</a>
 				<ul class="sub">
-					<li><a class="fa fa-user" href="${pageContext.request.contextPath }/admin/user">  Quản Trị</a></li>
-					<li><a class="fa fa-angry" href="${pageContext.request.contextPath }/admin/role"> Cấp Bậc</a></li>
-					<li><a class="fa fa-users" href="${pageContext.request.contextPath }/admin/member">  Thành Viên</a></li>
-					<li><a class="fa fa-list-ul" href="${pageContext.request.contextPath }/admin/cat"> Danh Mục</a></li>
-					<li><a class="fa fa-cubes" href="${pageContext.request.contextPath }/admin/product"> Sản Phẩm</a></li>
-					<li><a class="fa fa-shopping-cart" href="${pageContext.request.contextPath }/admin/order"> Đơn Hàng</a></li>
-					<li><a class="fa fa-list-ul" href="${pageContext.request.contextPath }/admin/contact"> Liên Hệ</a></li>
-					<li><a class="fa fa-comments" href="${pageContext.request.contextPath }/admin/comment"> Bình Luận</a></li>
-					<li><a class="fa fa-credit-card" href="${pageContext.request.contextPath }/admin/payment"> Hình Thức Thanh Toán</a></li>
-					<li><a class="fa fa-award" href="${pageContext.request.contextPath }/admin/discount"> Mã Giảm Giá</a></li>
-					
-					
+					<li><a class="fa fa-user"
+						href="${pageContext.request.contextPath }/admin/user"> Quản
+							Trị</a></li>
+					<li><a class="fa fa-angry"
+						href="${pageContext.request.contextPath }/admin/role"> Cấp Bậc</a></li>
+					<li><a class="fa fa-users"
+						href="${pageContext.request.contextPath }/admin/member"> Thành
+							Viên</a></li>
+					<li><a class="fa fa-list-ul"
+						href="${pageContext.request.contextPath }/admin/cat"> Danh Mục</a></li>
+					<li><a class="fa fa-cubes"
+						href="${pageContext.request.contextPath }/admin/product"> Sản
+							Phẩm</a></li>
+					<li><a class="fa fa-shopping-cart"
+						href="${pageContext.request.contextPath }/admin/order"> Đơn
+							Hàng</a></li>
+					<li><a class="fa fa-list-ul"
+						href="${pageContext.request.contextPath }/admin/contact"> Liên
+							Hệ</a></li>
+					<li><a class="fa fa-comments"
+						href="${pageContext.request.contextPath }/admin/comment"> Bình
+							Luận</a></li>
+					<li><a class="fa fa-credit-card"
+						href="${pageContext.request.contextPath }/admin/payment"> Hình
+							Thức Thanh Toán</a></li>
+					<li><a class="fa fa-award"
+						href="${pageContext.request.contextPath }/admin/discount"> Mã
+							Giảm Giá</a></li>
+
+
 				</ul></li>
-<!-- 
+			<!-- 
 			<li class="sub-menu"><a href="javascript:;" class=""> <i
 					class="icon_documents_alt"></i> <span>Pages</span> <span
 					class="menu-arrow arrow_carrot-right"></span>

@@ -97,7 +97,7 @@
 										<span id="thanhtien${id}"> $${thanhtien} </span>
 
 										<div class="fs-15 hov-cl10 pointer">
-											<a  href="${pageContext.request.contextPath}/huy/${id}"><span
+											<a href="${pageContext.request.contextPath}/huy/${id}"><span
 												class="lnr lnr-cross"></span></a>
 										</div>
 									</div>
@@ -134,8 +134,8 @@
 					<div class="flex-col-l p-t-68">
 						<div class="flex-w flex-m bo-b-1 bocl15 w-full p-tb-18">
 							<span class="size-w-58 txt-m-109 cl3"> Tổng Tiền: </span> <span
-								class="size-w-59 txt-m-104 cl6" id="tongtien"> $${tongtien }
-							</span>
+								class="size-w-59 txt-m-104 cl6" id="tongtien">
+								$${tongtien } </span>
 						</div>
 
 						<!-- <div class="flex-w flex-m bo-b-1 bocl15 w-full p-tb-18">

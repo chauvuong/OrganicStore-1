@@ -114,16 +114,21 @@
 								<p class="blue">You have ${sumComment } new messages</p>
 							</li>
 							<c:forEach items="${listCommentNews}" var="listComment">
-							<li><a href="${pageContext.request.contextPath }/admin/comment/"> <span class="photo"><img
-										alt="avatar" src="${pageContext.request.contextPath }/templates/public/images/tenor.gif"></span> <span
-									class="subject"> <span class="from">${listComment.name }</span> <span
-										class="time">${listComment.rating }<i class="fa fa-star" aria-hidden="true"></i></span>
-								</span> <span class=""> ${listComment.content } </span>
-							</a></li>
+								<li><a
+									href="${pageContext.request.contextPath }/admin/comment/">
+										<span class="photo"><img alt="avatar"
+											src="${pageContext.request.contextPath }/templates/public/images/tenor.gif"></span>
+										<span class="subject"> <span class="from">${listComment.name }</span>
+											<span class="time">${listComment.rating }<i
+												class="fa fa-star" aria-hidden="true"></i></span>
+									</span> <span class=""> ${listComment.content } </span>
+								</a></li>
 							</c:forEach>
 
 
-							<li><a href="${pageContext.request.contextPath }/admin/comment/">See all messages</a></li>
+							<li><a
+								href="${pageContext.request.contextPath }/admin/comment/">See
+									all messages</a></li>
 						</ul></li>
 
 					<li id="alert_notificatoin_bar" class="dropdown"><a

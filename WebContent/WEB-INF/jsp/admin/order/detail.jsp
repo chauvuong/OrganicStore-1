@@ -9,21 +9,21 @@
 				<h3 class="page-header">
 					<i class="fa fa-laptop"></i> Chi Tiết Đơn Hàng
 				</h3>
-			
+
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home"></i><a
 						href="${pageContext.request.contextPath}/admin">Home</a></li>
 					<li><i class="fa fa-laptop"></i><a
-						href="${pageContext.request.contextPath }/admin/order">Đơn Hàng</a></li>
-						<li><i class="fa fa-laptop"></i>
-						<a
-						href="javascript:void(0)">Chi Tiết Đơn Hàng</a></li>
-					
+						href="${pageContext.request.contextPath }/admin/order">Đơn
+							Hàng</a></li>
+					<li><i class="fa fa-laptop"></i> <a href="javascript:void(0)">Chi
+							Tiết Đơn Hàng</a></li>
+
 				</ol>
 			</div>
 		</div>
 		<h4>
-			<p style="color: green;font-family: cursive;">${msg}</p>
+			<p style="color: green; font-family: cursive;">${msg}</p>
 		</h4>
 		<div class="row">
 			<div class="col-lg-12">
@@ -38,34 +38,34 @@
 								<th><i class="icon_mobile"></i> Thành tiền</th>
 							</tr>
 
-								<c:set var="tong"></c:set>
-								<c:forEach items="${listDetail}" var="objDetail">
+							<c:set var="tong"></c:set>
+							<c:forEach items="${listDetail}" var="objDetail">
 								<c:set var="sanpham" value="${objDetail.name}"></c:set>
 								<c:set var="soluong" value="${objDetail.quatity}"></c:set>
 								<c:set var="dongia" value="${objDetail.price}"></c:set>
 								<c:set var="thanhtien" value="${dongia*soluong}"></c:set>
 								<c:set var="tong" value="${tong+thanhtien}"></c:set>
-									<tr>
-										<td>${objDetail.id_order}</td>
-										<td>${sanpham}</td>
-										<td>${soluong}</td>
-										<td>$${dongia }</td>
-										<td>$${thanhtien }</td>
-									</tr>
-								</c:forEach>
 								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td><b>Tổng Cộng:</b></td>
-									<td style="color:red">$${tong} (USD)</td>
+									<td>${objDetail.id_order}</td>
+									<td>${sanpham}</td>
+									<td>${soluong}</td>
+									<td>$${dongia }</td>
+									<td>$${thanhtien }</td>
 								</tr>
-								
-		</tbody>
-			</table>
-					
+							</c:forEach>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><b>Tổng Cộng:</b></td>
+								<td style="color: red">$${tong} (USD)</td>
+							</tr>
+
+						</tbody>
+					</table>
+
 				</section>
-z
+				z
 			</div>
 		</div>
 	</section>

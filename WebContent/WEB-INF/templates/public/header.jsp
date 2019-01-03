@@ -4,42 +4,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Organic Store</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="${pageContext.request.contextPath }/templates/public/images/icons/favicon.png"/>
+<title>Organic Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="icon" type="image/png"
+	href="${pageContext.request.contextPath }/templates/public/images/icons/favicon.png" />
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/fonts/linearicons-v1.0.0/icon-font.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/css-hamburgers/hamburgers.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/fonts/linearicons-v1.0.0/icon-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/slick/slick.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/lightbox2/css/lightbox.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/revolution/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/revolution/css/navigation.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/revolution/css/settings.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/slick/slick.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/css/util.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/lightbox2/css/lightbox.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/templates/public/vendor/quicklylogin/login.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/revolution/css/layers.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/revolution/css/navigation.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/revolution/css/settings.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/css/util.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/css/main.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/templates/public/vendor/quicklylogin/login.css">
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -54,208 +72,244 @@
 						<!-- Menu desktop -->
 						<div class="menu-desktop">
 							<ul class="main-menu">
-								
 
-								<li>
-									<a href="${pageContext.request.contextPath}/danh-muc/0">SẢN PHẨM</a>
+
+								<li><a href="${pageContext.request.contextPath}/danh-muc/0">SẢN
+										PHẨM</a>
 									<ul class="sub-menu">
 										<c:forEach var="objCat" items="${listCat }">
-											<c:set value="${pageContext.request.contextPath}/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
-											var="slugName"></c:set>
-										<li><a href="${pageContext.request.contextPath}/danh-muc/${objCat.id_cat}">${objCat.name}</a></li>
+											<c:set
+												value="${pageContext.request.contextPath}/${slugUtil.createSlug(objCat.name)}/${objCat.id_cat}"
+												var="slugName"></c:set>
+											<li><a
+												href="${pageContext.request.contextPath}/danh-muc/${objCat.id_cat}">${objCat.name}</a></li>
 										</c:forEach>
-									</ul>
-								</li>
+									</ul></li>
 
 								<!-- <li>
 									<a href="blog-grid-01.html">THÔNG TIN TRÁI CÂY</a>
 									
 								</li> -->
-	
-								<li>
-									<a href="${pageContext.request.contextPath }/lien-he">LIÊN HỆ</a>
-									
-								</li>
-								
-								
+
+								<li><a href="${pageContext.request.contextPath }/lien-he">LIÊN
+										HỆ</a></li>
+
+
 							</ul>
-						
+
 						</div>
 					</div>
-						
+
 					<div class="center-header">
-						<!-- Logo desktop -->		
+						<!-- Logo desktop -->
 						<div class="logo">
-							<a href="${pageContext.request.contextPath }/"><img src="${pageContext.request.contextPath }/templates/public/images/icons/logochau.png" alt="IMG-LOGO"></a>
+							<a href="${pageContext.request.contextPath }/"><img
+								src="${pageContext.request.contextPath }/templates/public/images/icons/logochau.png"
+								alt="IMG-LOGO"></a>
 						</div>
 					</div>
-						
+
 					<div class="right-header">
 						<!-- Icon header -->
-						<div class="wrap-icon-header flex-w flex-r-m h-full wrap-menu-click p-t-8">
+						<div
+							class="wrap-icon-header flex-w flex-r-m h-full wrap-menu-click p-t-8">
 							<!--Search -->
 							<div class="h-full flex-m">
-								<div class="icon-header-item flex-c-m trans-04 js-show-modal-search" id="d-s">
-									<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-search.png" alt="SEARCH">
+								<div
+									class="icon-header-item flex-c-m trans-04 js-show-modal-search"
+									id="d-s">
+									<img
+										src="${pageContext.request.contextPath }/templates/public/images/icons/icon-search.png"
+										alt="SEARCH">
 								</div>
 							</div>
-						
+
 							<c:choose>
-							<c:when test="${userInfo != null}">
-							
-							<div   id="icon-user" class="wrap-cart-header h-full flex-m m-l-10 menu-click">
-								<div class="icon-header-item flex-c-m trans-04">
-									<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-user.png" alt="user">
-								</div>	
-								<div class="cart-header menu-click-child trans-04">
-									<marquee width="100%">Chào ${userInfo.fullname }</marquee>
-								 	<a href="${pageContext.request.contextPath }/san-pham-yeu-thich" class="txt-s-101 cl9 hov-cl10 trans-04">Sản Phẩm Yêu Thích</a><br/>
-									<a href="${pageContext.request.contextPath }/thong-tin-cua-toi" class="txt-s-101 cl9 hov-cl10 trans-04">Thông Tin Cá Nhân</a><br/>
-									<a href="${pageContext.request.contextPath }/logout-member" class="txt-s-101 cl9 hov-cl10 trans-04">Đăng xuất</a>
-								</div>
-							</div>
-							
-							
-							
-							</c:when>
+								<c:when test="${userInfo != null}">
 
-							<c:otherwise>
+									<div id="icon-user"
+										class="wrap-cart-header h-full flex-m m-l-10 menu-click">
+										<div class="icon-header-item flex-c-m trans-04">
+											<img
+												src="${pageContext.request.contextPath }/templates/public/images/icons/icon-user.png"
+												alt="user">
+										</div>
+										<div class="cart-header menu-click-child trans-04">
+											<marquee width="100%">Chào ${userInfo.fullname }</marquee>
+											<a
+												href="${pageContext.request.contextPath }/san-pham-yeu-thich"
+												class="txt-s-101 cl9 hov-cl10 trans-04">Sản Phẩm Yêu
+												Thích</a><br /> <a
+												href="${pageContext.request.contextPath }/thong-tin-cua-toi"
+												class="txt-s-101 cl9 hov-cl10 trans-04">Thông Tin Cá
+												Nhân</a><br /> <a
+												href="${pageContext.request.contextPath }/logout-member"
+												class="txt-s-101 cl9 hov-cl10 trans-04">Đăng xuất</a>
+										</div>
+									</div>
+
+
+
+								</c:when>
+
+								<c:otherwise>
 									<div class="wrap-cart-header h-full flex-m m-l-10 menu-click">
-								<div id="icon-login" class="icon-header-item flex-c-m trans-04" >
-									<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-login.png" alt="login">
-								</div>
-								<div id="form-login" class="cart-header menu-click-child trans-04">
-									
-										<form method="post" action="${pageContext.request.contextPath}/login-member">
-											<div class="p-b-24">
-												
-												<input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" type="text" required="required" name="email" id="email" value=""
-												placeholder="Email">
-											</div>
+										<div id="icon-login"
+											class="icon-header-item flex-c-m trans-04">
+											<img
+												src="${pageContext.request.contextPath }/templates/public/images/icons/icon-login.png"
+												alt="login">
+										</div>
+										<div id="form-login"
+											class="cart-header menu-click-child trans-04">
 
-											<div class="p-b-24">
-												
-												<input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" required="required" type="password" id="password" name="password"
-												placeholder="Mật khẩu" value="">
-											</div>
+											<form method="post"
+												action="${pageContext.request.contextPath}/login-member">
+												<div class="p-b-24">
 
-											<div class="flex-w flex-m p-t-5 p-b-5">
-												<input type="submit" class="flex-c-m txt-s-105 cl0 bg10 size-a-39 hov-btn2 trans-04 p-rl-10 m-r-18">
-
-												<div class="flex-w flex-m p-tb-8">
-													<input id="check-creatacc" class="size-a-35 m-r-10" type="checkbox" name="creatacc">
-													<label for="check-creatacc" class="txt-s-101 cl9">
-														Ghi nhớ
-													</label>
+													<input
+														class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1"
+														type="text" required="required" name="email" id="email"
+														value="" placeholder="Email">
 												</div>
-											</div>
+
+												<div class="p-b-24">
+
+													<input
+														class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1"
+														required="required" type="password" id="password"
+														name="password" placeholder="Mật khẩu" value="">
+												</div>
+
+												<div class="flex-w flex-m p-t-5 p-b-5">
+													<input type="submit"
+														class="flex-c-m txt-s-105 cl0 bg10 size-a-39 hov-btn2 trans-04 p-rl-10 m-r-18">
+
+													<div class="flex-w flex-m p-tb-8">
+														<input id="check-creatacc" class="size-a-35 m-r-10"
+															type="checkbox" name="creatacc"> <label
+															for="check-creatacc" class="txt-s-101 cl9"> Ghi
+															nhớ </label>
+													</div>
+												</div>
 											</form>
 											<!-- <a href="account-lost-pass.html" class="txt-s-101 cl9 hov-cl10 trans-04">
 												Quên mật khẩu?
 											</a> -->
-										
-										<a href="${pageContext.request.contextPath }/dang-ky-tai-khoan" class="txt-s-101 cl9 hov-cl10 trans-04">
-											Đăng ký
-										</a>
-										<div class="social">
-											<div class="social-inner">
-											  <a class="fa fa-2x fa-google btn btn-danger" href="javascript:void(0)"></a>
-											  <a class="fa fa-2x fa-twitter btn btn-info" href="javascript:void(0)"></a>
-											  <a class="fa fa-2x fa-facebook btn btn-primary" href="javascript:void(0)"></a>
+
+											<a
+												href="${pageContext.request.contextPath }/dang-ky-tai-khoan"
+												class="txt-s-101 cl9 hov-cl10 trans-04"> Đăng ký </a>
+											<div class="social">
+												<div class="social-inner">
+													<a class="fa fa-2x fa-google btn btn-danger"
+														href="javascript:void(0)"></a> <a
+														class="fa fa-2x fa-twitter btn btn-info"
+														href="javascript:void(0)"></a> <a
+														class="fa fa-2x fa-facebook btn btn-primary"
+														href="javascript:void(0)"></a>
+												</div>
 											</div>
 										</div>
-								</div>
-							</div>
-							
-							
-							</c:otherwise>
-							</c:choose>
-						
-							<div class="wrap-cart-header h-full flex-m m-l-10 menu-click" id="shop_cart">
-								<div class="cartnum">
-								<c:choose>
-								<c:when test="${empty listCart}">
-									<div class="icon-header-item flex-c-m trans-04 icon-header-noti"  data-notify="0">
-										<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart-2.png" alt="CART">
 									</div>
-								</c:when>
-								<c:otherwise>
-									<div class="icon-header-item flex-c-m trans-04 icon-header-noti"  data-notify="${listCart.size()}">
-										<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart-2.png" alt="CART">
-									</div>
-								
+
+
 								</c:otherwise>
-								</c:choose>
-									
-								</div>
-					
-								<div class="cart-header menu-click-child trans-04" id="content_shop_cart">
-									<div class="bo-b-1 bocl15">
-										<div class="size-h-2 js-pscroll m-r--15 p-r-15">
-										<c:choose>
-										<c:when test="${!empty listCart}">
-											<c:forEach items="${listCart}" var="objCart">
-												<c:set var="name" value="${objCart.name}"></c:set>
-												<c:set var="id" value="${objCart.id_product}"></c:set>
-												<c:set var="slug" value="${slugUtil.createSlug(name)}"></c:set>	
-											
-											<div class="flex-w flex-str m-b-25">
-												<div class="size-w-15 flex-w flex-t">
-													<a href="${pageContext.request.contextPath}/san-pham/${slug}-${id}.html" class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
-														<img width="77px" height="64.33px" src="${pageContext.request.contextPath }/files/${objCart.picture}" alt="PRODUCT">
-													</a>
+							</c:choose>
 
-													<div class="size-w-17 flex-col-l">
-														<a href="${pageContext.request.contextPath}/san-pham/${slug}-${id}.html" class="txt-s-108 cl3 hov-cl10 trans-04">
-															${objCart.name}
-														</a>
-														
-														<span class="txt-s-101 cl9">
-															$${objCart.price}
-														</span>
-
-														<span class="txt-s-109 cl12">
-															x${objCart.quatity}
-														</span>
-													</div>
-												</div>
-
-												<div class="size-w-14 flex-b">
-													<button class="lh-10">
-														<a href="${pageContext.request.contextPath}/huy/${id}" >
-															<img src="${pageContext.request.contextPath }/templates/public/images/icons/icon-close.png" alt="CLOSE" >
-														</a>
-													</button>
-												</div>
+							<div class="wrap-cart-header h-full flex-m m-l-10 menu-click"
+								id="shop_cart">
+								<div class="cartnum">
+									<c:choose>
+										<c:when test="${empty listCart}">
+											<div
+												class="icon-header-item flex-c-m trans-04 icon-header-noti"
+												data-notify="0">
+												<img
+													src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart-2.png"
+													alt="CART">
 											</div>
-											<c:set var="thanhtien" value="${objCart.quatity*objCart.price}"></c:set>
-												<c:set var="tongtien" value="${tongtien+thanhtien}"></c:set>
-											</c:forEach>
 										</c:when>
 										<c:otherwise>
-											<center>
-												<img src="${pageContext.request.contextPath }/templates/public/images/empty_cartpublic1.png" />
-											</center>
+											<div
+												class="icon-header-item flex-c-m trans-04 icon-header-noti"
+												data-notify="${listCart.size()}">
+												<img
+													src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart-2.png"
+													alt="CART">
+											</div>
+
 										</c:otherwise>
 									</c:choose>
-											
-											
+
+								</div>
+
+								<div class="cart-header menu-click-child trans-04"
+									id="content_shop_cart">
+									<div class="bo-b-1 bocl15">
+										<div class="size-h-2 js-pscroll m-r--15 p-r-15">
+											<c:choose>
+												<c:when test="${!empty listCart}">
+													<c:forEach items="${listCart}" var="objCart">
+														<c:set var="name" value="${objCart.name}"></c:set>
+														<c:set var="id" value="${objCart.id_product}"></c:set>
+														<c:set var="slug" value="${slugUtil.createSlug(name)}"></c:set>
+
+														<div class="flex-w flex-str m-b-25">
+															<div class="size-w-15 flex-w flex-t">
+																<a
+																	href="${pageContext.request.contextPath}/san-pham/${slug}-${id}.html"
+																	class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
+																	<img width="77px" height="64.33px"
+																	src="${pageContext.request.contextPath }/files/${objCart.picture}"
+																	alt="PRODUCT">
+																</a>
+
+																<div class="size-w-17 flex-col-l">
+																	<a
+																		href="${pageContext.request.contextPath}/san-pham/${slug}-${id}.html"
+																		class="txt-s-108 cl3 hov-cl10 trans-04">
+																		${objCart.name} </a> <span class="txt-s-101 cl9">
+																		$${objCart.price} </span> <span class="txt-s-109 cl12">
+																		x${objCart.quatity} </span>
+																</div>
+															</div>
+
+															<div class="size-w-14 flex-b">
+																<button class="lh-10">
+																	<a href="${pageContext.request.contextPath}/huy/${id}">
+																		<img
+																		src="${pageContext.request.contextPath }/templates/public/images/icons/icon-close.png"
+																		alt="CLOSE">
+																	</a>
+																</button>
+															</div>
+														</div>
+														<c:set var="thanhtien"
+															value="${objCart.quatity*objCart.price}"></c:set>
+														<c:set var="tongtien" value="${tongtien+thanhtien}"></c:set>
+													</c:forEach>
+												</c:when>
+												<c:otherwise>
+													<center>
+														<img
+															src="${pageContext.request.contextPath }/templates/public/images/empty_cartpublic1.png" />
+													</center>
+												</c:otherwise>
+											</c:choose>
+
+
 										</div>
 									</div>
-										
-									<c:choose>
-									<c:when test="${!empty listCart}">
-									<div class="flex-w flex-sb-m p-t-22 p-b-12">
-										<span class="txt-m-103 cl3 p-r-20">
-											Tổng Tiền :
-										</span>
 
-										<span class="txt-m-111 cl6">
-											$${tongtien}
-										</span>
-									</div>
-										
-									<!-- <div class="flex-w flex-sb-m p-b-31">
+									<c:choose>
+										<c:when test="${!empty listCart}">
+											<div class="flex-w flex-sb-m p-t-22 p-b-12">
+												<span class="txt-m-103 cl3 p-r-20"> Tổng Tiền : </span> <span
+													class="txt-m-111 cl6"> $${tongtien} </span>
+											</div>
+
+											<!-- <div class="flex-w flex-sb-m p-b-31">
 										<span class="txt-m-103 cl3 p-r-20">
 											Thành tiền
 										</span>
@@ -264,36 +318,38 @@
 											48vnd
 										</span>
 									</div> -->
-									
-									<a href="${pageContext.request.contextPath }/gio-hang" class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
-										Xem Giỏ Hàng
-									</a>
-									<br />
-									<a href="${pageContext.request.contextPath }/thanh-toan" class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
-										Thanh Toán
-									</a>	 
-									</c:when>
+
+											<a href="${pageContext.request.contextPath }/gio-hang"
+												class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
+												Xem Giỏ Hàng </a>
+											<br />
+											<a href="${pageContext.request.contextPath }/thanh-toan"
+												class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
+												Thanh Toán </a>
+										</c:when>
 									</c:choose>
 								</div>
-								
-								
+
+
 							</div>
 						</div>
-					
+
 					</div>
 				</nav>
 				<!--Edit Search-->
-				<div style="display: none" class="container-search-header" id="desktop-search" >
-					<form action="${pageContext.request.contextPath }/search" method="post" class="wrap-search-header flex-w">
+				<div style="display: none" class="container-search-header"
+					id="desktop-search">
+					<form action="${pageContext.request.contextPath }/search"
+						method="post" class="wrap-search-header flex-w">
 						<button class="flex-c-m trans-04">
 							<span class="lnr lnr-magnifier"></span>
 						</button>
-						<input class="plh1" type="text" name="search" placeholder="Search tất cả">
-						
+						<input class="plh1" type="text" name="search"
+							placeholder="Search tất cả">
+
 					</form>
 				</div>
 				<!--Edit Search-->
-			</div>	
+			</div>
 		</div>
 	</header>
-

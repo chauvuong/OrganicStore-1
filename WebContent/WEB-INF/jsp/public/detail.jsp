@@ -45,7 +45,7 @@
 									class="fa fa-angle-right m-l-1" aria-hidden="true"></i></span>
 							</div>
 						</div>
-<%-- 
+						<%-- 
 						<div class="wrap-thumb-100 flex-w flex-sb p-t-30">
 							<div class="thumb-100">
 								<div class="sub-frame sub-1">
@@ -100,7 +100,7 @@
 					<span class="txt-m-117 cl9">$ ${objNews.price } </span>
 
 					<div class="flex-w flex-m p-t-30 p-b-27">
-				 	<c:choose>
+						<c:choose>
 							<c:when test="${numberComment !=0 }">
 
 
@@ -114,7 +114,7 @@
 
 								<span class="txt-s-115 cl6 p-b-3"> (${numberComment }
 									Review) </span>
-							 </c:when>
+							</c:when>
 							<c:otherwise>
 								<span class="fs-16 cl11 lh-15 txt-center m-r-15"> <i
 									class="fa fa-star m-rl-1"></i> <i class="fa fa-star m-rl-1"></i>
@@ -122,7 +122,7 @@
 									<i class="fa fa-star m-rl-1"></i>
 								</span>
 							</c:otherwise>
-						</c:choose> 
+						</c:choose>
 
 
 					</div>
@@ -396,7 +396,8 @@ function checkComment(event){
 											<img
 											src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart.png"
 											alt="ICON">
-										</a> <a href="javascript:void(0)" onclick="addWish(${objProduct.id_product})" 
+										</a> <a href="javascript:void(0)"
+											onclick="addWish(${objProduct.id_product})"
 											class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
 											<img class="icon-addwish-b1"
 											src="${pageContext.request.contextPath }/templates/public/images/icons/icon-heart.png"

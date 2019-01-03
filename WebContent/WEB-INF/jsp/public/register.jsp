@@ -37,7 +37,7 @@
 				<div class="p-l-15 p-rl-0-lg">
 					<h4 class="txt-m-124 cl3 p-b-28">Đăng ký Tài Khoản</h4>
 
-					<form class="how-bor3 p-rl-30 p-t-32 p-b-66" >
+					<form class="how-bor3 p-rl-30 p-t-32 p-b-66">
 						<div class="p-b-24">
 							<div class="txt-s-101 cl6 p-b-10">
 								Email <span class="cl12">*</span>
@@ -109,7 +109,7 @@
 		</form>
 	</div>
 
-	
+
 
 	<script>
 		function checkEmail(email) {

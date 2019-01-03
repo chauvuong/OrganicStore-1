@@ -23,12 +23,13 @@
 		<c:choose>
 			<c:when test="${param['msg'] eq 'edit' }">
 				<h4>
-					<p style="color: red;font-family: cursive;">Phương Thức Thanh Toán Đã Tồn Tại</p>
+					<p style="color: red; font-family: cursive;">Phương Thức Thanh
+						Toán Đã Tồn Tại</p>
 				</h4>
 			</c:when>
 		</c:choose>
 		<h4>
-			<p style="color: red;font-family: cursive;">${msg}</p>
+			<p style="color: red; font-family: cursive;">${msg}</p>
 		</h4>
 		<div class="row">
 			<div class="col-lg-12">
@@ -41,13 +42,18 @@
 								method="post" class="niceform">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Phương Thức Thanh Toán</label>
-									<input type="text" class="form-control" name="name" <c:if test="${objPay != null}"> value="${objPay.name}"</c:if>
-										id="exampleInputEmail1" 	value="<c:if test="${objPay.name ne null}">${objPay.name}</c:if>"
+									<input type="text" class="form-control" name="name"
+										<c:if test="${objPay != null}"> value="${objPay.name}"</c:if>
+										id="exampleInputEmail1"
+										value="<c:if test="${objPay.name ne null}">${objPay.name}</c:if>"
 										placeholder="Nhập Phương Thức Thanh Toán"
 										value="<c:if test="${objPay.name ne null}">${objPay.name}</c:if>">
 
 								</div>
-								<p><form:errors path="objPay.name" cssStyle="color:red; font-family: cursive;"></form:errors></p>
+								<p>
+									<form:errors path="objPay.name"
+										cssStyle="color:red; font-family: cursive;"></form:errors>
+								</p>
 								<input type="submit" value="Lưu" id="submit" name="submit"
 									class="btn btn-primary" /> <input type="reset"
 									value="Nhập Lại" id="submit" class="btn btn-danger" />

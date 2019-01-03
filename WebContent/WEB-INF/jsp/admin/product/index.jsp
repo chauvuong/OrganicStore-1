@@ -17,18 +17,21 @@
 				</ol>
 			</div>
 		</div>
-<h4>
-	<p style="color: green;font-family: cursive;">${msg}</p>
-</h4>
+		<h4>
+			<p style="color: green; font-family: cursive;">${msg}</p>
+		</h4>
 
 		<div class="row">
 			<div class="col-lg-12">
 				<section class="panel">
-				<ul style="margin-left: 400px; padding-top: 20px">
+					<ul style="margin-left: 400px; padding-top: 20px">
 						<li>
-							<form  action="${pageContext.request.contextPath }/admin/product/search" method="post" class="navbar-form">
-								<input class="form-control" name="name" placeholder="Search" type="text">
-								<input class="btn btn-primary" type="submit" name="search" value="Tìm kiếm" />
+							<form
+								action="${pageContext.request.contextPath }/admin/product/search"
+								method="post" class="navbar-form">
+								<input class="form-control" name="name" placeholder="Search"
+									type="text"> <input class="btn btn-primary"
+									type="submit" name="search" value="Tìm kiếm" />
 							</form>
 						</li>
 					</ul>
@@ -155,10 +158,10 @@
 									}
 									</script>
 
-									</c:forEach>
-									</form>
-		</tbody>
-			</table>
+								</c:forEach>
+							</form>
+						</tbody>
+					</table>
 					<div class="text-center">
 						<ul class="pagination">
 							<c:choose>
@@ -208,10 +211,12 @@
 									<c:forEach var="i" begin="${num }" end="${loop}">
 										<c:choose>
 											<c:when test="${pages == i }">
-												<li><a style="background: #FFCCFF" style="border-radius"   >${i}</a></li>
+												<li><a style="background: #FFCCFF"
+													style="border-radius">${i}</a></li>
 											</c:when>
 											<c:otherwise>
-												<li><a href="${pageContext.request.contextPath }/admin/product?page=${i}">${i }</a></li>
+												<li><a
+													href="${pageContext.request.contextPath }/admin/product?page=${i}">${i }</a></li>
 
 											</c:otherwise>
 										</c:choose>

@@ -22,12 +22,12 @@
 		<c:choose>
 			<c:when test="${param['msg'] eq 'add' }">
 				<h4>
-					<p style="color: red;font-family: cursive;">Cấp Bậc Đã Tồn Tại</p>
+					<p style="color: red; font-family: cursive;">Cấp Bậc Đã Tồn Tại</p>
 				</h4>
 			</c:when>
 		</c:choose>
 		<h4>
-			<p style="color: red;font-family: cursive;">${msg}</p>
+			<p style="color: red; font-family: cursive;">${msg}</p>
 		</h4>
 		<div class="row">
 			<div class="col-lg-12">
@@ -40,12 +40,16 @@
 								method="post" class="niceform">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Tên Danh Mục</label> <input
-										type="text" class="form-control" name="name" <c:if test="${objRole != null}"> value="${objRole.name}"</c:if>
+										type="text" class="form-control" name="name"
+										<c:if test="${objRole != null}"> value="${objRole.name}"</c:if>
 										value="<c:if test="${objRole.name ne null}">${objRole.name}</c:if>"
 										id="exampleInputEmail1" placeholder="Tên Quyền">
 
 								</div>
-								<p><form:errors path="objRole.name" cssStyle="color:red; font-family: cursive;"></form:errors></p>
+								<p>
+									<form:errors path="objRole.name"
+										cssStyle="color:red; font-family: cursive;"></form:errors>
+								</p>
 								<input type="submit" value="Lưu" class="btn btn-primary" /> <input
 									type="reset" value="Nhập Lại" class="btn btn-danger" />
 							</form>
@@ -53,6 +57,6 @@
 					</div>
 				</section>
 			</div>
-			</div>
+		</div>
 	</section>
 </section>

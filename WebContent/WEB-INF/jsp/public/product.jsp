@@ -66,7 +66,7 @@
 							<li class="p-b-5"><label> <input class="brand"
 									name="price" onclick="getprice()" value="2" type="checkbox"
 									value=""> Từ $5 đến $10
-								
+
 							</label></li>
 
 							<li class="p-b-5"><label> <input class="brand"
@@ -131,8 +131,7 @@
 							</div>
 						</div>
 
-						<span class="txt-s-101 cl9 m-r-30 size-w-53">
-							 </span>
+						<span class="txt-s-101 cl9 m-r-30 size-w-53"> </span>
 					</div>
 
 					<!-- Shop grid -->
@@ -169,7 +168,7 @@
 														onclick="sanpham(${objProduct.id_product})"
 														src="${pageContext.request.contextPath }/templates/public/images/icons/icon-cart.png"
 														alt="ICON">
-														</a> <a href="javasrcipt:void(0)"
+													</a> <a href="javasrcipt:void(0)"
 														class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
 														<img class="icon-addwish-b1"
 														onclick="addWish(${objProduct.id_product})"
@@ -188,7 +187,7 @@
 					</div>
 
 					<!-- Pagination -->
-				<!-- 	<div class="flex-w flex-c-m p-t-47">
+					<!-- 	<div class="flex-w flex-c-m p-t-47">
 						<a href="#"
 							class="flex-c-m txt-s-115 cl6 size-a-23 bo-all-1 bocl15 hov-btn1 trans-04 m-all-3 active-pagi1">
 							1 </a> <a href="#"

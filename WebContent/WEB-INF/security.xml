@@ -22,12 +22,12 @@
 			access="hasAnyRole('ROLE_ADMIN', 'ROLE_MOD')" />
 		<intercept-url pattern="/admin/product"
 			access="hasAnyRole('ROLE_ADMIN', 'ROLE_MOD')" />
-			<intercept-url pattern="/admin/member/"
+		<intercept-url pattern="/admin/member/"
 			access="hasAnyRole('ROLE_ADMIN', 'ROLE_MOD')" />
 		<intercept-url pattern="/admin/member/ajax"
-			access="hasAnyRole('ROLE_ADMIN', 'ROLE_MOD')" />	
+			access="hasAnyRole('ROLE_ADMIN', 'ROLE_MOD')" />
 		<intercept-url pattern="/admin/order"
-			access="hasAnyRole('ROLE_ADMIN', 'ROLE_MOD')" />		
+			access="hasAnyRole('ROLE_ADMIN', 'ROLE_MOD')" />
 
 		<intercept-url pattern="/admin/**"
 			access="hasRole('ROLE_ADMIN')" />
@@ -44,10 +44,11 @@
 		<logout logout-url="/logout" logout-success-url="/login"
 			delete-cookies="JSESSIONID" invalidate-session="true" />
 
-		<!-- <remember-me token-validity-seconds="1209600"
-			remember-me-parameter="remember-me" data-source-ref="dataSource" /> -->
-			
-			 <remember-me key="uniqueAndSecret" token-validity-seconds="1296000"/>
+		<!-- <remember-me token-validity-seconds="1209600" remember-me-parameter="remember-me" 
+			data-source-ref="dataSource" /> -->
+
+		<remember-me key="uniqueAndSecret"
+			token-validity-seconds="1296000" />
 
 	</http>
 

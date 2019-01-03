@@ -24,12 +24,13 @@
 		<c:choose>
 			<c:when test="${param['msg'] eq 'add' }">
 				<h4>
-					<p style="color: red;font-family: cursive;">Phương Thức Thanh Toán Đã Tồn Tại</p>
+					<p style="color: red; font-family: cursive;">Phương Thức Thanh
+						Toán Đã Tồn Tại</p>
 				</h4>
 			</c:when>
 		</c:choose>
 		<h4>
-			<p style="color: red;font-family: cursive;">${msg}</p>
+			<p style="color: red; font-family: cursive;">${msg}</p>
 		</h4>
 		<div class="row">
 			<div class="col-lg-12">
@@ -47,7 +48,10 @@
 										placeholder="Nhập Phương Thức Thanh Toán">
 
 								</div>
-								<p><form:errors path="pay.name" cssStyle="color:red; font-family: cursive;"></form:errors></p>
+								<p>
+									<form:errors path="pay.name"
+										cssStyle="color:red; font-family: cursive;"></form:errors>
+								</p>
 
 								<input type="submit" value="Thêm" class="btn btn-primary" /> <input
 									type="reset" value="Nhập Lại" class="btn btn-danger" />
@@ -56,6 +60,6 @@
 					</div>
 				</section>
 			</div>
-			</div>
+		</div>
 	</section>
 </section>

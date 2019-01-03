@@ -41,8 +41,9 @@
 
 						<ul>
 							<li class="txt-s-101 cl6 flex-t p-b-10"><span
-								class="size-w-13">
-							</span> <span class="size-w-12 p-t-1" style="color: red; font-size: 20px;">CÔNG TY TNHH ORGANIC STORE </span></li>
+								class="size-w-13"> </span> <span class="size-w-12 p-t-1"
+								style="color: red; font-size: 20px;">CÔNG TY TNHH ORGANIC
+									STORE </span></li>
 							<li class="txt-s-101 cl6 flex-t p-b-10"><span
 								class="size-w-11"> <img
 									src="${pageContext.request.contextPath }/templates/public/images/icons/icon-mail.png"

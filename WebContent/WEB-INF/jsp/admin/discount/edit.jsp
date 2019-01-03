@@ -59,7 +59,7 @@
 										id="exampleInputEmail1" placeholder="Sửa Sale">
 
 								</div>
-							
+
 
 								<input type="submit" value="Lưu" id="submit" name="submit"
 									class="btn btn-primary" /> <input type="reset"

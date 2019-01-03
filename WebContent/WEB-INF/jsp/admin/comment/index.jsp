@@ -12,7 +12,8 @@
 					<li><i class="fa fa-home"></i><a
 						href="${pageContext.request.contextPath}/admin">Home</a></li>
 					<li><i class="fa fa-laptop"></i><a
-						href="${pageContext.request.contextPath }/admin/comment">Bình Luận</a></li>
+						href="${pageContext.request.contextPath }/admin/comment">Bình
+							Luận</a></li>
 				</ol>
 			</div>
 		</div>
@@ -41,7 +42,8 @@
 									<td>${objComment.name }</td>
 									<td>${objComment.email }</td>
 									<td>${objComment.content }</td>
-									<td>${objComment.rating }<i class="fa fa-star" aria-hidden="true"></i></td>
+									<td>${objComment.rating }<i class="fa fa-star"
+										aria-hidden="true"></i></td>
 									<td>${objComment.date_create }</td>
 									<td>
 										<div>
@@ -57,7 +59,7 @@
 					</table>
 					<div class="text-center">
 						<ul class="pagination">
-					
+
 
 						</ul>
 					</div>

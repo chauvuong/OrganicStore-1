@@ -21,12 +21,12 @@
 			</div>
 		</div>
 		<h4>
-			<p style="color: green;font-family: cursive;">${msg}</p>
+			<p style="color: green; font-family: cursive;">${msg}</p>
 		</h4>
 		<c:if test="${err ne null}">
 
 			<h4>
-				<p style="color: red;font-family: cursive;">Sản Phẩm Đã Tồn Tại</p>
+				<p style="color: red; font-family: cursive;">Sản Phẩm Đã Tồn Tại</p>
 			</h4>
 
 		</c:if>

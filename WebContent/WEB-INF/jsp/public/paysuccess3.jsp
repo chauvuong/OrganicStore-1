@@ -29,9 +29,10 @@
 
 	</h4>
 </center>
-<center><h4 style="color: green; font-family: cursive;">Sau Khi Thanh Toán, Chúng tôi Sẽ Giao Hàng Cho Bạn Trong Thời
-		Gian Sớm Nhất !
-</h4></center>
+<center>
+	<h4 style="color: green; font-family: cursive;">Sau Khi Thanh
+		Toán, Chúng tôi Sẽ Giao Hàng Cho Bạn Trong Thời Gian Sớm Nhất !</h4>
+</center>
 
 <!-- 
 

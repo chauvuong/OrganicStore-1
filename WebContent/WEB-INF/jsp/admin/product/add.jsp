@@ -28,7 +28,7 @@
 			</c:when>
 		</c:choose>
 		<h4>
-			<p style="color: red;font-family: cursive;" >${msg}</p>
+			<p style="color: red; font-family: cursive;">${msg}</p>
 		</h4>
 		<div class="row">
 			<div class="col-lg-12">
@@ -45,7 +45,7 @@
 										id="exampleInputEmail1" placeholder="Nhập Tên Sản Phẩm">
 
 								</div>
-									
+
 								<div class="form-group">
 									<label for="exampleInputEmail1">Mô Tả:</label> <input
 										type="text" class="form-control" name="preview"

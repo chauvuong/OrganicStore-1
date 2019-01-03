@@ -5,7 +5,8 @@
 	style="background-image: url('${pageContext.request.contextPath }/templates/public/images/post.jpg');">
 	<div class="container">
 		<div class="txt-center p-t-160 p-b-165">
-			<h2 class="txt-l-101 cl0 txt-center p-b-14 respon1">Chi Tiết Đơn Hàng</h2>
+			<h2 class="txt-l-101 cl0 txt-center p-b-14 respon1">Chi Tiết Đơn
+				Hàng</h2>
 
 			<span class="txt-m-201 cl0 flex-c-m flex-w"> <a
 				href="${pageContext.request.contextPath }/"
@@ -40,10 +41,10 @@
  -->
 						<li class="nav-item p-b-16"><a class="nav-link active"
 							data-toggle="tab" href="#orders" role="tab">Chi Tiết Đơn Hàng</a></li>
-							
+
 						<li class="nav-item p-b-16"><a class="nav-link"
-							href="${pageContext.request.contextPath }/thong-tin-cua-toi">Đơn Đặt Hàng
-								</a></li>
+							href="${pageContext.request.contextPath }/thong-tin-cua-toi">Đơn
+								Đặt Hàng </a></li>
 
 						<!-- <li class="nav-item p-b-16">
 								<a class="nav-link" data-toggle="tab" href="#addresses" role="tab">Địa Chỉ</a>
@@ -63,8 +64,7 @@
 					<!-- Tab panes -->
 					<div class="tab-content p-l-70 p-l-0-lg">
 						<!--!Detail- -->
-						<div class="tab-pane fade" id="accountdetail"
-							role="tabpanel">
+						<div class="tab-pane fade" id="accountdetail" role="tabpanel">
 
 							<form
 								action="${pageContext.request.contextPath }/thay-doi-thong-tin-ca-nhan/${userInfo.id_member}"
@@ -143,9 +143,10 @@
 								</p>
 							</div> -->
 						<!-- - -->
-						<div class="tab-pane fade  show active" id="orders" role="tabpanel">
-							
-									<table class="table-shopping-cart">
+						<div class="tab-pane fade  show active" id="orders"
+							role="tabpanel">
+
+							<table class="table-shopping-cart">
 								<tr class="table_head bg12">
 									<th class="column-3 p-l-30">Mã Đơn Hàng</th>
 									<th class="column-3 ">Sản Phẩm</th>
@@ -184,10 +185,10 @@
 
 								</tr>
 							</table>
-						
+
 						</div>
 
-						
+
 						<div class="tab-pane fade" id="changepassword" role="tabpanel">
 							<form
 								action="${pageContext.request.contextPath }/thay-doi-mat-khau/${userInfo.id_member}"

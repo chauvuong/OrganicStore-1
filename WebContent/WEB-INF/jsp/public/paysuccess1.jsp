@@ -22,7 +22,7 @@
 		Thanh Toán.</h1>
 </center>
 
-<br/>
+<br />
 <center>
 	<h4>
 
@@ -34,8 +34,9 @@
 	</h4>
 </center>
 <center>
-	
+
 	<br />
-	<h5 style="color: green; font-family: cursive;"> Sau Khi Thanh Toán Chúng tôi Sẽ Giao Hàng Cho Bạn Trong Thời Gian Sớm Nhất
-		!</h5>
-</center><br />
+	<h5 style="color: green; font-family: cursive;">Sau Khi Thanh Toán
+		Chúng tôi Sẽ Giao Hàng Cho Bạn Trong Thời Gian Sớm Nhất !</h5>
+</center>
+<br />

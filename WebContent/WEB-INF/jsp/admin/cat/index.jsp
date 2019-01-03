@@ -18,7 +18,7 @@
 		</div>
 
 		<h4>
-			<p style="color: green; font-family: cursive; ">${msg}</p>
+			<p style="color: green; font-family: cursive;">${msg}</p>
 		</h4>
 		<div class="row">
 
@@ -28,8 +28,7 @@
 
 					<a href="${pageContext.request.contextPath }/admin/cat/add"
 						class="btn btn-success"><strong
-						class="glyphicon glyphicon-plus"></strong><span
-						class="bt_green_r"></span></a>
+						class="glyphicon glyphicon-plus"></strong><span class="bt_green_r"></span></a>
 					<table class="table table-striped table-advance table-hover">
 						<tbody>
 							<tr>

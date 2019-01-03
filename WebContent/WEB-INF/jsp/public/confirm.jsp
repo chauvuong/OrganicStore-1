@@ -7,11 +7,15 @@
 
 		<c:choose>
 			<c:when test="${userInfo != null}">
-			<form action="${pageContext.request.contextPath}/hoan-tat-thanh-toan" method="post">
+				<form
+					action="${pageContext.request.contextPath}/hoan-tat-thanh-toan"
+					method="post">
 			</c:when>
 
 			<c:otherwise>
-				<form action="${pageContext.request.contextPath}/thanh-toan-hoan-tat" method="post">
+				<form
+					action="${pageContext.request.contextPath}/thanh-toan-hoan-tat"
+					method="post">
 			</c:otherwise>
 		</c:choose>
 
